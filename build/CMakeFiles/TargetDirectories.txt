@@ -1,3 +1,0 @@
-/root/projects/Arasaka/build/CMakeFiles/arasaka.dir
-/root/projects/Arasaka/build/CMakeFiles/edit_cache.dir
-/root/projects/Arasaka/build/CMakeFiles/rebuild_cache.dir

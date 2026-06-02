@@ -1,1 +1,0 @@
- "/usr/mingw64/bin/libgstreamer-1.0-0.dll" "/usr/mingw64/bin/libglib-2.0-0.dll" -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
