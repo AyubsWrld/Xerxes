@@ -36,18 +36,23 @@ if (NOT CMAKE_SYSTEM_NAME STREQUAL "Windows")
         ${GLIB2_INCLUDE_DIR}
     )
 else()
-    message( WARNING "Cross-Compiling for Windows")
+    message(STATUS "Cross-Compiling for Windows")
+    list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+    find_package(GLIB2 REQUIRED)
+    if (NOT GLIB2_FOUND)
+        message(WARNING "Found glib packages ${GLIB2_INCLUDE_DIR}")
+    endif()
     target_link_libraries(
         arasaka 
         PUBLIC
-        /usr/mingw64/bin/libgstreamer-1.0-0.dll
-        /usr/mingw64/bin/libglib-2.0-0.dll
-    )
-    target_include_directories(
-        arasaka 
-        PUBLIC
-        /usr/include/glib-2.0/
-        /usr/include/gst/
+        # /usr/mingw64/bin/libgstreamer-1.0-0.dll
+        # /usr/mingw64/bin/libglib-2.0-0.dll
+        # ${GStreamer_LIBRARIES}
+        #${GLIB2_LIBRARIES}
+        GLIB2::GLIB2
+        GLIB2::GOBJECT
+        GLIB2::GTHREAD2
+        GLIB2::GIO
     )
 endif()
 

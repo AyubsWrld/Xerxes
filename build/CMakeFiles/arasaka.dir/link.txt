@@ -1,0 +1,3 @@
+/usr/sbin/cmake -E rm -f CMakeFiles/arasaka.dir/objects.a
+/usr/sbin/x86_64-w64-mingw32-ar qc CMakeFiles/arasaka.dir/objects.a @CMakeFiles/arasaka.dir/objects1.rsp
+/usr/sbin/x86_64-w64-mingw32-g++ -Wl,--whole-archive CMakeFiles/arasaka.dir/objects.a -Wl,--no-whole-archive -o arasaka.exe -Wl,--out-implib,libarasaka.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/arasaka.dir/linkLibs.rsp

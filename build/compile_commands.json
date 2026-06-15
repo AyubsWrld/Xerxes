@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/root/projects/Hound/build",
+  "command": "/usr/sbin/x86_64-w64-mingw32-g++    -o CMakeFiles/arasaka.dir/src/main.cpp.obj -c /root/projects/Hound/src/main.cpp",
+  "file": "/root/projects/Hound/src/main.cpp",
+  "output": "CMakeFiles/arasaka.dir/src/main.cpp.obj"
+}
+]

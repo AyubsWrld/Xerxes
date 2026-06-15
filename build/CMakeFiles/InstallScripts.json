@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/root/projects/Hound/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
