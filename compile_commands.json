@@ -1,7 +1,7 @@
 [
 {
   "directory": "/root/projects/Arasaka/build",
-  "command": "/usr/sbin/x86_64-w64-mingw32-g++  @CMakeFiles/arasaka.dir/includes_CXX.rsp  -o CMakeFiles/arasaka.dir/src/main.cpp.obj -c /root/projects/Arasaka/src/main.cpp",
+  "command": "/usr/sbin/x86_64-w64-mingw32-g++  @CMakeFiles/arasaka.dir/includes_CXX.rsp  -o CMakeFiles/arasaka.dir/src/main.cpp.obj -c /root/projects/Arasaka/src/main.cpp -std=c++23",
   "file": "/root/projects/Arasaka/src/main.cpp",
   "output": "CMakeFiles/arasaka.dir/src/main.cpp.obj"
 }

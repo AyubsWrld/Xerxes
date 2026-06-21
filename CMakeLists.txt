@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16) 
 
 project(
-    Hound
+    Xerxes
     LANGUAGES C CXX
     VERSION 0.1
 )
@@ -11,11 +11,11 @@ project(
 
 
 
-set(CMAKE_EXPORT_COMPILE_COMMANDS On)
 set(CXX_STANDARD 23) 
 set(CXX_STANDARD_REQUIRED On)
+set(CMAKE_EXPORT_COMPILE_COMMANDS On)
 
-add_executable(arasaka src/main.cpp)
+add_executable(xerxes src/main.cpp)
 
 if (NOT CMAKE_SYSTEM_NAME STREQUAL "Windows")
 # for finding the Find<package_name>.cmake files.
@@ -24,13 +24,13 @@ if (NOT CMAKE_SYSTEM_NAME STREQUAL "Windows")
     find_package(GLIB2 REQUIRED)
 
     target_link_libraries(
-        arasaka 
+        xerxes 
         PUBLIC 
         ${GStreamer_LIBRARIES}
         ${GLIB2_LIBRARIES}
     )
     target_include_directories(
-        arasaka
+        xerxes
         PUBLIC 
         ${GStreamer_INCLUDE_DIR}
         ${GLIB2_INCLUDE_DIR}
@@ -43,7 +43,7 @@ else()
         message(WARNING "Found glib packages ${GLIB2_INCLUDE_DIR}")
     endif()
     target_link_libraries(
-        arasaka 
+        xerxes 
         PUBLIC
         # /usr/mingw64/bin/libgstreamer-1.0-0.dll
         # /usr/mingw64/bin/libglib-2.0-0.dll
