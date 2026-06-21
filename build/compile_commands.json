@@ -1,8 +1,8 @@
 [
 {
-  "directory": "/root/projects/Hound/build",
-  "command": "/usr/sbin/x86_64-w64-mingw32-g++    -o CMakeFiles/arasaka.dir/src/main.cpp.obj -c /root/projects/Hound/src/main.cpp",
-  "file": "/root/projects/Hound/src/main.cpp",
-  "output": "CMakeFiles/arasaka.dir/src/main.cpp.obj"
+  "directory": "/root/projects/Xerxes/build",
+  "command": "/usr/sbin/c++  -I/root/projects/Xerxes/include -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -std=gnu++23 -o CMakeFiles/xerxes.dir/src/main.cpp.o -c /root/projects/Xerxes/src/main.cpp",
+  "file": "/root/projects/Xerxes/src/main.cpp",
+  "output": "CMakeFiles/xerxes.dir/src/main.cpp.o"
 }
 ]

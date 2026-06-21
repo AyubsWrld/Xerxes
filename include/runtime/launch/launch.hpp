@@ -1,9 +1,15 @@
 #pragma once
 #include <concepts>
 #include <cstdint>
+#include <type_traits>
 
 namespace runtime::launch
 {
+    namespace detail 
+    {
+        // little trick picked up from Klaus Iglberger: https://www.sandordargo.com/blog/2024/12/04/crtp-vs-concepts#the-crtp-solution
+        class EngineLoopTag{};
+    }
     struct PreInitContext
     {
         void cleanup();
@@ -17,40 +23,5 @@ namespace runtime::launch
         { t.load_core_modules() } -> std::convertible_to<bool>;
         { t.load_preinit_modules() };
         { t.exit() };
-    };
-
-    template <IEngineLoop Derived>
-    class EngineLoop
-    {
-      public:
-        [[nodiscard]]
-        std::uint32_t pre_init()
-        {
-            static_cast<Derived&>(*this).pre_init();
-        }
-
-        [[nodiscard]]
-        std::uint32_t init()
-        {
-            static_cast<Derived&>(*this).init();
-        }
-
-        [[nodiscard]]
-        std::uint32_t post_init()
-        {
-            static_cast<Derived&>(*this).post_init();
-        }
-
-        void load_core_modules()
-        {
-            static_cast<Derived&>(*this).load_core_modules();
-        }
-
-        void load_preinit_modules()
-        {
-            static_cast<Derived&>(*this).load_core_modules();
-        }
-
-        void exit() { static_cast<Derived&>(*this).exit(); }
-    };
+    } && std::is_base_of_v<detail::EngineLoopTag, T>;
 }

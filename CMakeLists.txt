@@ -9,13 +9,12 @@ project(
 #set(GStreamer_DIR ${CMAKE_SOURCE_DIR}/libs/gstreamer-1.28.3/cmake)
 
 
-
-
-set(CXX_STANDARD 23) 
-set(CXX_STANDARD_REQUIRED On)
+set(CMAKE_CXX_STANDARD 23) 
+set(CMAKE_CXX_STANDARD_REQUIRED On)
 set(CMAKE_EXPORT_COMPILE_COMMANDS On)
 
 add_executable(xerxes src/main.cpp)
+target_include_directories(xerxes PRIVATE ${CMAKE_SOURCE_DIR}/include)
 
 if (NOT CMAKE_SYSTEM_NAME STREQUAL "Windows")
 # for finding the Find<package_name>.cmake files.

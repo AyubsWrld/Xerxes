@@ -1,7 +1,7 @@
 ---
 Language:        Cpp
 AlignAfterOpenBracket: true
-AccessModifierOffset: -2
+AccessModifierOffset: -4
 AlignArrayOfStructures: None
 AlignConsecutiveAssignments:
   Enabled:         false
@@ -147,8 +147,8 @@ ContinuationIndentWidth: 4
 Cpp11BracedListStyle: Block
 DerivePointerAlignment: false
 DisableFormat:   false
-EmptyLineAfterAccessModifier: Never
-EmptyLineBeforeAccessModifier: LogicalBlock
+EmptyLineAfterAccessModifier: Always
+EmptyLineBeforeAccessModifier: Always
 EnumTrailingComma: Leave
 ExperimentalAutoDetectBinPacking: false
 FixNamespaceComments: false

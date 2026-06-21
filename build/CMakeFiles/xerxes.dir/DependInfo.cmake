@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/projects/Hound/src/main.cpp" "CMakeFiles/arasaka.dir/src/main.cpp.obj" "gcc" "CMakeFiles/arasaka.dir/src/main.cpp.obj.d"
+  "/root/projects/Xerxes/src/main.cpp" "CMakeFiles/xerxes.dir/src/main.cpp.o" "gcc" "CMakeFiles/xerxes.dir/src/main.cpp.o.d"
+  "" "xerxes" "gcc" "CMakeFiles/xerxes.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

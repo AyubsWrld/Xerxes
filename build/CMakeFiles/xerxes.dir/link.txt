@@ -1,0 +1,1 @@
+/usr/sbin/c++ -Wl,--dependency-file=CMakeFiles/xerxes.dir/link.d CMakeFiles/xerxes.dir/src/main.cpp.o -o xerxes  /usr/lib/libglib-2.0.so
