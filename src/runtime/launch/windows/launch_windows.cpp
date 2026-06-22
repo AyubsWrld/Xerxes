@@ -1,8 +1,8 @@
 #include <runtime/launch/launch.hpp>
 
-namespace runtime::launch
+namespace Runtime::Launch
 {
-    class WindowsLoop : public detail::EngineLoopTag
+    class WindowsLoop : public Detail::EngineLoopTag
     {
 
     public:

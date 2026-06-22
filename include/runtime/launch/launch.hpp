@@ -3,9 +3,9 @@
 #include <cstdint>
 #include <type_traits>
 
-namespace runtime::launch
+namespace Runtime::Launch
 {
-    namespace detail 
+    namespace Detail
     {
         // little trick picked up from Klaus Iglberger: https://www.sandordargo.com/blog/2024/12/04/crtp-vs-concepts#the-crtp-solution
         class EngineLoopTag{};
@@ -23,5 +23,5 @@ namespace runtime::launch
         { t.load_core_modules() } -> std::convertible_to<bool>;
         { t.load_preinit_modules() };
         { t.exit() };
-    } && std::is_base_of_v<detail::EngineLoopTag, T>;
+    } && std::is_base_of_v<Detail::EngineLoopTag, T>;
 }
