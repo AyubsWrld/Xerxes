@@ -1,8 +1,8 @@
 [
 {
-  "directory": "/root/projects/Xerxes/build",
-  "command": "/usr/sbin/c++  -I/root/projects/Xerxes/include -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -std=gnu++23 -o CMakeFiles/xerxes.dir/src/main.cpp.o -c /root/projects/Xerxes/src/main.cpp",
-  "file": "/root/projects/Xerxes/src/main.cpp",
-  "output": "CMakeFiles/xerxes.dir/src/main.cpp.o"
+  "directory": "E:/msys2/home/0xtrensetta/Projects/Xerxes/build",
+  "command": "E:/msys2/mingw64/bin/c++.exe  @CMakeFiles/xerxes.dir/includes_CXX.rsp -std=gnu++23 -o CMakeFiles/xerxes.dir/src/main.cpp.obj -c E:/msys2/home/0xtrensetta/Projects/Xerxes/src/main.cpp",
+  "file": "E:/msys2/home/0xtrensetta/Projects/Xerxes/src/main.cpp",
+  "output": "CMakeFiles/xerxes.dir/src/main.cpp.obj"
 }
 ]

@@ -1,8 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/xerxes.dir/link.d"
-  "CMakeFiles/xerxes.dir/src/main.cpp.o"
-  "CMakeFiles/xerxes.dir/src/main.cpp.o.d"
-  "xerxes"
+  "CMakeFiles/xerxes.dir/src/main.cpp.obj"
+  "CMakeFiles/xerxes.dir/src/main.cpp.obj.d"
+  "libxerxes.dll.a"
+  "xerxes.exe"
+  "xerxes.exe.manifest"
   "xerxes.pdb"
 )
 

@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/sbin/cmake
+CMAKE_COMMAND = E:/msys2/clang64/bin/cmake.exe
 
 # The command to remove a file.
-RM = /usr/sbin/cmake -E rm -f
+RM = E:/msys2/clang64/bin/cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/projects/Xerxes
+CMAKE_SOURCE_DIR = E:/msys2/home/0xtrensetta/Projects/Xerxes
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/projects/Xerxes/build
+CMAKE_BINARY_DIR = E:/msys2/home/0xtrensetta/Projects/Xerxes/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/xerxes.dir/depend.make
@@ -72,37 +72,40 @@ include CMakeFiles/xerxes.dir/flags.make
 CMakeFiles/xerxes.dir/codegen:
 .PHONY : CMakeFiles/xerxes.dir/codegen
 
-CMakeFiles/xerxes.dir/src/main.cpp.o: CMakeFiles/xerxes.dir/flags.make
-CMakeFiles/xerxes.dir/src/main.cpp.o: /root/projects/Xerxes/src/main.cpp
-CMakeFiles/xerxes.dir/src/main.cpp.o: CMakeFiles/xerxes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/projects/Xerxes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/xerxes.dir/src/main.cpp.o"
-	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xerxes.dir/src/main.cpp.o -MF CMakeFiles/xerxes.dir/src/main.cpp.o.d -o CMakeFiles/xerxes.dir/src/main.cpp.o -c /root/projects/Xerxes/src/main.cpp
+CMakeFiles/xerxes.dir/src/main.cpp.obj: CMakeFiles/xerxes.dir/flags.make
+CMakeFiles/xerxes.dir/src/main.cpp.obj: CMakeFiles/xerxes.dir/includes_CXX.rsp
+CMakeFiles/xerxes.dir/src/main.cpp.obj: E:/msys2/home/0xtrensetta/Projects/Xerxes/src/main.cpp
+CMakeFiles/xerxes.dir/src/main.cpp.obj: CMakeFiles/xerxes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:/msys2/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/xerxes.dir/src/main.cpp.obj"
+	E:/msys2/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xerxes.dir/src/main.cpp.obj -MF CMakeFiles/xerxes.dir/src/main.cpp.obj.d -o CMakeFiles/xerxes.dir/src/main.cpp.obj -c E:/msys2/home/0xtrensetta/Projects/Xerxes/src/main.cpp
 
 CMakeFiles/xerxes.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/xerxes.dir/src/main.cpp.i"
-	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/projects/Xerxes/src/main.cpp > CMakeFiles/xerxes.dir/src/main.cpp.i
+	E:/msys2/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:/msys2/home/0xtrensetta/Projects/Xerxes/src/main.cpp > CMakeFiles/xerxes.dir/src/main.cpp.i
 
 CMakeFiles/xerxes.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/xerxes.dir/src/main.cpp.s"
-	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/projects/Xerxes/src/main.cpp -o CMakeFiles/xerxes.dir/src/main.cpp.s
+	E:/msys2/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:/msys2/home/0xtrensetta/Projects/Xerxes/src/main.cpp -o CMakeFiles/xerxes.dir/src/main.cpp.s
 
 # Object files for target xerxes
 xerxes_OBJECTS = \
-"CMakeFiles/xerxes.dir/src/main.cpp.o"
+"CMakeFiles/xerxes.dir/src/main.cpp.obj"
 
 # External object files for target xerxes
 xerxes_EXTERNAL_OBJECTS =
 
-xerxes: CMakeFiles/xerxes.dir/src/main.cpp.o
-xerxes: CMakeFiles/xerxes.dir/build.make
-xerxes: CMakeFiles/xerxes.dir/compiler_depend.ts
-xerxes: /usr/lib/libglib-2.0.so
-xerxes: CMakeFiles/xerxes.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/root/projects/Xerxes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable xerxes"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/xerxes.dir/link.txt --verbose=$(VERBOSE)
+xerxes.exe: CMakeFiles/xerxes.dir/src/main.cpp.obj
+xerxes.exe: CMakeFiles/xerxes.dir/build.make
+xerxes.exe: E:/msys2/mingw64/lib/libSDL3.dll.a
+xerxes.exe: CMakeFiles/xerxes.dir/linkLibs.rsp
+xerxes.exe: CMakeFiles/xerxes.dir/objects1.rsp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=E:/msys2/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable xerxes.exe"
+	E:/msys2/clang64/bin/cmake.exe -E rm -f CMakeFiles/xerxes.dir/objects.a
+	E:/msys2/mingw64/bin/ar.exe qc CMakeFiles/xerxes.dir/objects.a @CMakeFiles/xerxes.dir/objects1.rsp
+	E:/msys2/mingw64/bin/c++.exe -Wl,--whole-archive CMakeFiles/xerxes.dir/objects.a -Wl,--no-whole-archive -o xerxes.exe -Wl,--out-implib,libxerxes.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/xerxes.dir/linkLibs.rsp
 
 # Rule to build all files generated by this target.
-CMakeFiles/xerxes.dir/build: xerxes
+CMakeFiles/xerxes.dir/build: xerxes.exe
 .PHONY : CMakeFiles/xerxes.dir/build
 
 CMakeFiles/xerxes.dir/clean:
@@ -110,6 +113,6 @@ CMakeFiles/xerxes.dir/clean:
 .PHONY : CMakeFiles/xerxes.dir/clean
 
 CMakeFiles/xerxes.dir/depend:
-	cd /root/projects/Xerxes/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/projects/Xerxes /root/projects/Xerxes /root/projects/Xerxes/build /root/projects/Xerxes/build /root/projects/Xerxes/build/CMakeFiles/xerxes.dir/DependInfo.cmake "--color=$(COLOR)" xerxes
+	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" E:/msys2/home/0xtrensetta/Projects/Xerxes E:/msys2/home/0xtrensetta/Projects/Xerxes E:/msys2/home/0xtrensetta/Projects/Xerxes/build E:/msys2/home/0xtrensetta/Projects/Xerxes/build E:/msys2/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles/xerxes.dir/DependInfo.cmake "--color=$(COLOR)" xerxes
 .PHONY : CMakeFiles/xerxes.dir/depend
 
