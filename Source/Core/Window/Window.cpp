@@ -1,4 +1,4 @@
-#include "core/window/window.hpp"
+#include "Core/Window/Window.hpp"
 #include <SDL3/SDL_video.h>
 
 namespace Core::Window 
@@ -9,9 +9,9 @@ namespace Core::Window
             std::uint32_t height,
             std::string name)
         : 
-        _width(width),
-        _height(height),
-        _name(name)
+        width(width),
+        height(height),
+        name(name)
     { 
         // This shouldn't be done by the window. 
         if (!SDL_Init(SDL_INIT_VIDEO))
@@ -19,7 +19,7 @@ namespace Core::Window
             SDL_Log("SDL could not initialize! SDL error: %s\n", SDL_GetError());
         }
 
-        if (_window = SDL_CreateWindow(_name.c_str(), _width, _height, 0 ) ; !_window)
+        if (window = SDL_CreateWindow(name.c_str(), width, height, 0 ) ; !window)
         {
             SDL_Log("SDL could not create a window! SDL error: %s\n", SDL_GetError());
         }
@@ -28,16 +28,16 @@ namespace Core::Window
 
     Window::~Window()
     {
-        SDL_DestroySurface(_surface);
-        _surface = nullptr;
+        SDL_DestroySurface(surface);
+        surface = nullptr;
 
-        SDL_DestroyWindowSurface(_window);
-        _window = nullptr;
+        SDL_DestroyWindowSurface(window);
+        window = nullptr;
 
         SDL_Quit(); // this should not be handled by the window.
     }
 
-    void Window::close()
+    void Window::Close()
     {
     }
 }

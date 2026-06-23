@@ -14,14 +14,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED On)
 set(CMAKE_EXPORT_COMPILE_COMMANDS On)
 
 
-add_executable(xerxes src/main.cpp)
-target_include_directories(xerxes PRIVATE ${CMAKE_SOURCE_DIR}/include)
+add_executable(xerxes Source/main.cpp)
+target_include_directories(xerxes PRIVATE ${CMAKE_SOURCE_DIR}/Include)
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMake")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/external/SDL3-3.4.10")
 find_package(SDL3 REQUIRED CONFIG COMPONENTS SDL3-shared)
 
-target_sources(xerxes PRIVATE "${CMAKE_SOURCE_DIR}/src/core/window/window.cpp")
+target_sources(
+    xerxes 
+    PRIVATE 
+    ${CMAKE_SOURCE_DIR}/Source/Core/Window/Window.cpp
+)
 target_link_libraries(
     xerxes 
     PRIVATE

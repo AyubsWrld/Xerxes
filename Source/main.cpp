@@ -35,5 +35,39 @@ static const char* fragmentShaderSource
 
 int main(int argc, char* argv[])
 {
+    SDL_Window* window = nullptr; 
+    SDL_Event event; 
+    bool running = true; 
+
+    if(!SDL_Init(SDL_INIT_VIDEO))
+    {
+        std::cerr << "Failed to initialize SDL window\n";
+        return EXIT_FAILURE;
+    }
+
+    window = SDL_CreateWindow("Vulkan Tutorial", 1280, 720, NULL);
+    if (!window)
+    {
+        std::cerr << "Failed to create SDL window\n";
+        return EXIT_FAILURE;
+    }
+
+    while(running)
+    {
+        while(SDL_PollEvent(&event))
+        {
+            if (event.type == SDL_EVENT_QUIT)
+            {
+                running = false;
+            }
+        }
+    }
+
+    ON_SCOPE_EXIT
+    {
+        SDL_DestroyWindow(window);
+        SDL_Quit();
+    };
+
     return EXIT_SUCCESS;
 }
