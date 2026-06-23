@@ -129,6 +129,30 @@ xerxes/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/xerxes.dir/build.make CMakeFiles/xerxes.dir/build
 .PHONY : xerxes/fast
 
+src/core/window/window.obj: src/core/window/window.cpp.obj
+.PHONY : src/core/window/window.obj
+
+# target to build an object file
+src/core/window/window.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xerxes.dir/build.make CMakeFiles/xerxes.dir/src/core/window/window.cpp.obj
+.PHONY : src/core/window/window.cpp.obj
+
+src/core/window/window.i: src/core/window/window.cpp.i
+.PHONY : src/core/window/window.i
+
+# target to preprocess a source file
+src/core/window/window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xerxes.dir/build.make CMakeFiles/xerxes.dir/src/core/window/window.cpp.i
+.PHONY : src/core/window/window.cpp.i
+
+src/core/window/window.s: src/core/window/window.cpp.s
+.PHONY : src/core/window/window.s
+
+# target to generate assembly for a file
+src/core/window/window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xerxes.dir/build.make CMakeFiles/xerxes.dir/src/core/window/window.cpp.s
+.PHONY : src/core/window/window.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... xerxes"
+	@echo "... src/core/window/window.obj"
+	@echo "... src/core/window/window.i"
+	@echo "... src/core/window/window.s"
 	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

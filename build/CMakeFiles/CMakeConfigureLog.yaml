@@ -11,11 +11,11 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "E:/msys2/clang64/share/cmake/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeNinjaFindMake.cmake:5 (find_program)"
       - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_MAKE_PROGRAM"
-    description: "Path to a program."
+    description: "Program used to build from build.ninja files."
     settings:
       SearchFramework: "NEVER"
       SearchAppBundle: "NEVER"
@@ -25,13 +25,14 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "gmake"
-      - "make"
-      - "smake"
+      - "ninja-build"
+      - "ninja"
+      - "samu"
     candidate_directories:
       - "E:/msys2/mingw64/bin/"
       - "C:/Program Files/Neovim/bin/"
       - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
       - "E:/msys2/clang64/bin/"
       - "E:/msys2/usr/local/bin/"
       - "E:/msys2/usr/bin/"
@@ -43,64 +44,18 @@ events:
       - "E:/msys2/usr/bin/vendor_perl/"
       - "E:/msys2/usr/bin/core_perl/"
     searched_directories:
-      - "E:/msys2/mingw64/bin/gmake.com"
-      - "E:/msys2/mingw64/bin/gmake.exe"
-      - "E:/msys2/mingw64/bin/gmake"
-      - "C:/Program Files/Neovim/bin/gmake.com"
-      - "C:/Program Files/Neovim/bin/gmake.exe"
-      - "C:/Program Files/Neovim/bin/gmake"
-      - "E:/msys2/home/0xtrensetta/bin/gmake.com"
-      - "E:/msys2/home/0xtrensetta/bin/gmake.exe"
-      - "E:/msys2/home/0xtrensetta/bin/gmake"
-      - "E:/msys2/clang64/bin/gmake.com"
-      - "E:/msys2/clang64/bin/gmake.exe"
-      - "E:/msys2/clang64/bin/gmake"
-      - "E:/msys2/usr/local/bin/gmake.com"
-      - "E:/msys2/usr/local/bin/gmake.exe"
-      - "E:/msys2/usr/local/bin/gmake"
-      - "E:/msys2/usr/bin/gmake.com"
-      - "E:/msys2/usr/bin/gmake.exe"
-      - "E:/msys2/usr/bin/gmake"
-      - "C:/Windows/System32/gmake.com"
-      - "C:/Windows/System32/gmake.exe"
-      - "C:/Windows/System32/gmake"
-      - "C:/Windows/gmake.com"
-      - "C:/Windows/gmake.exe"
-      - "C:/Windows/gmake"
-      - "C:/Windows/System32/wbem/gmake.com"
-      - "C:/Windows/System32/wbem/gmake.exe"
-      - "C:/Windows/System32/wbem/gmake"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gmake.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gmake.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gmake"
-      - "E:/msys2/usr/bin/site_perl/gmake.com"
-      - "E:/msys2/usr/bin/site_perl/gmake.exe"
-      - "E:/msys2/usr/bin/site_perl/gmake"
-      - "E:/msys2/usr/bin/vendor_perl/gmake.com"
-      - "E:/msys2/usr/bin/vendor_perl/gmake.exe"
-      - "E:/msys2/usr/bin/vendor_perl/gmake"
-      - "E:/msys2/usr/bin/core_perl/gmake.com"
-      - "E:/msys2/usr/bin/core_perl/gmake.exe"
-      - "E:/msys2/usr/bin/core_perl/gmake"
-      - "E:/msys2/mingw64/bin/make.com"
-      - "E:/msys2/mingw64/bin/make.exe"
-      - "E:/msys2/mingw64/bin/make"
-      - "C:/Program Files/Neovim/bin/make.com"
-      - "C:/Program Files/Neovim/bin/make.exe"
-      - "C:/Program Files/Neovim/bin/make"
-      - "E:/msys2/home/0xtrensetta/bin/make.com"
-      - "E:/msys2/home/0xtrensetta/bin/make.exe"
-      - "E:/msys2/home/0xtrensetta/bin/make"
-      - "E:/msys2/clang64/bin/make.com"
-      - "E:/msys2/clang64/bin/make.exe"
-      - "E:/msys2/clang64/bin/make"
-      - "E:/msys2/usr/local/bin/make.com"
-      - "E:/msys2/usr/local/bin/make.exe"
-      - "E:/msys2/usr/local/bin/make"
-      - "E:/msys2/usr/bin/make.com"
-    found: "E:/msys2/usr/bin/make.exe"
+      - "E:/msys2/mingw64/bin/ninja-build.com"
+      - "E:/msys2/mingw64/bin/ninja-build.exe"
+      - "E:/msys2/mingw64/bin/ninja-build"
+      - "E:/msys2/mingw64/bin/ninja.com"
+    found: "E:/msys2/mingw64/bin/ninja.exe"
     search_context:
       ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
         - "E:\\msys2\\mingw64\\bin"
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
@@ -112,14 +67,16 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
   -
     kind: "find-v1"
     backtrace:
-      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCompiler.cmake:63 (find_program)"
       - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
       - "CMakeLists.txt:3 (project)"
     mode: "program"
@@ -128,10 +85,10 @@ events:
     settings:
       SearchFramework: "NEVER"
       SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
       CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
       - "c++"
@@ -144,6 +101,7 @@ events:
       - "E:/msys2/mingw64/bin/"
       - "C:/Program Files/Neovim/bin/"
       - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
       - "E:/msys2/clang64/bin/"
       - "E:/msys2/usr/local/bin/"
       - "E:/msys2/usr/bin/"
@@ -163,6 +121,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -170,10 +133,12 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -205,6 +170,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -212,10 +182,12 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
   -
     kind: "message-v1"
     backtrace:
@@ -261,6 +233,7 @@ events:
       - "E:/msys2/mingw64/bin/"
       - "C:/Program Files/Neovim/bin/"
       - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
       - "E:/msys2/clang64/bin/"
       - "E:/msys2/usr/local/bin/"
       - "E:/msys2/usr/bin/"
@@ -280,6 +253,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -287,10 +265,12 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -314,6 +294,7 @@ events:
       - "E:/msys2/mingw64/bin/"
       - "C:/Program Files/Neovim/bin/"
       - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
       - "E:/msys2/clang64/bin/"
       - "E:/msys2/usr/local/bin/"
       - "E:/msys2/usr/bin/"
@@ -333,6 +314,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -340,10 +326,12 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -367,6 +355,7 @@ events:
       - "E:/msys2/mingw64/bin/"
       - "C:/Program Files/Neovim/bin/"
       - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
       - "E:/msys2/clang64/bin/"
       - "E:/msys2/usr/local/bin/"
       - "E:/msys2/usr/bin/"
@@ -386,6 +375,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -393,10 +387,12 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -420,6 +416,7 @@ events:
       - "E:/msys2/mingw64/bin/"
       - "C:/Program Files/Neovim/bin/"
       - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
       - "E:/msys2/clang64/bin/"
       - "E:/msys2/usr/local/bin/"
       - "E:/msys2/usr/bin/"
@@ -439,6 +436,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -446,10 +448,12 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -473,6 +477,7 @@ events:
       - "E:/msys2/mingw64/bin/"
       - "C:/Program Files/Neovim/bin/"
       - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
       - "E:/msys2/clang64/bin/"
       - "E:/msys2/usr/local/bin/"
       - "E:/msys2/usr/bin/"
@@ -492,6 +497,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -499,10 +509,12 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -526,6 +538,7 @@ events:
       - "E:/msys2/mingw64/bin/"
       - "C:/Program Files/Neovim/bin/"
       - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
       - "E:/msys2/clang64/bin/"
       - "E:/msys2/usr/local/bin/"
       - "E:/msys2/usr/bin/"
@@ -545,6 +558,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -552,10 +570,12 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -579,6 +599,7 @@ events:
       - "E:/msys2/mingw64/bin/"
       - "C:/Program Files/Neovim/bin/"
       - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
       - "E:/msys2/clang64/bin/"
       - "E:/msys2/usr/local/bin/"
       - "E:/msys2/usr/bin/"
@@ -598,6 +619,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -605,10 +631,12 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -632,6 +660,7 @@ events:
       - "E:/msys2/mingw64/bin/"
       - "C:/Program Files/Neovim/bin/"
       - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
       - "E:/msys2/clang64/bin/"
       - "E:/msys2/usr/local/bin/"
       - "E:/msys2/usr/bin/"
@@ -651,6 +680,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -658,10 +692,12 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -685,6 +721,7 @@ events:
       - "E:/msys2/mingw64/bin/"
       - "C:/Program Files/Neovim/bin/"
       - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
       - "E:/msys2/clang64/bin/"
       - "E:/msys2/usr/local/bin/"
       - "E:/msys2/usr/bin/"
@@ -704,6 +741,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -711,10 +753,12 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -738,6 +782,7 @@ events:
       - "E:/msys2/mingw64/bin/"
       - "C:/Program Files/Neovim/bin/"
       - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
       - "E:/msys2/clang64/bin/"
       - "E:/msys2/usr/local/bin/"
       - "E:/msys2/usr/bin/"
@@ -757,6 +802,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -764,10 +814,12 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -791,6 +843,7 @@ events:
       - "E:/msys2/mingw64/bin/"
       - "C:/Program Files/Neovim/bin/"
       - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
       - "E:/msys2/clang64/bin/"
       - "E:/msys2/usr/local/bin/"
       - "E:/msys2/usr/bin/"
@@ -811,6 +864,9 @@ events:
       - "E:/msys2/home/0xtrensetta/bin/tapi.com"
       - "E:/msys2/home/0xtrensetta/bin/tapi.exe"
       - "E:/msys2/home/0xtrensetta/bin/tapi"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/tapi.com"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/tapi.exe"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/tapi"
       - "E:/msys2/clang64/bin/tapi.com"
       - "E:/msys2/clang64/bin/tapi.exe"
       - "E:/msys2/clang64/bin/tapi"
@@ -848,6 +904,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -855,10 +916,12 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -885,6 +948,7 @@ events:
       - "E:/msys2/mingw64/bin/"
       - "C:/Program Files/Neovim/bin/"
       - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
       - "E:/msys2/clang64/bin/"
       - "E:/msys2/usr/local/bin/"
       - "E:/msys2/usr/bin/"
@@ -905,6 +969,9 @@ events:
       - "E:/msys2/home/0xtrensetta/bin/gcc-ar-15.2.com"
       - "E:/msys2/home/0xtrensetta/bin/gcc-ar-15.2.exe"
       - "E:/msys2/home/0xtrensetta/bin/gcc-ar-15.2"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar-15.2.com"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar-15.2.exe"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar-15.2"
       - "E:/msys2/clang64/bin/gcc-ar-15.2.com"
       - "E:/msys2/clang64/bin/gcc-ar-15.2.exe"
       - "E:/msys2/clang64/bin/gcc-ar-15.2"
@@ -944,6 +1011,9 @@ events:
       - "E:/msys2/home/0xtrensetta/bin/gcc-ar-15.com"
       - "E:/msys2/home/0xtrensetta/bin/gcc-ar-15.exe"
       - "E:/msys2/home/0xtrensetta/bin/gcc-ar-15"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar-15.com"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar-15.exe"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar-15"
       - "E:/msys2/clang64/bin/gcc-ar-15.com"
       - "E:/msys2/clang64/bin/gcc-ar-15.exe"
       - "E:/msys2/clang64/bin/gcc-ar-15"
@@ -983,6 +1053,9 @@ events:
       - "E:/msys2/home/0xtrensetta/bin/gcc-ar15.com"
       - "E:/msys2/home/0xtrensetta/bin/gcc-ar15.exe"
       - "E:/msys2/home/0xtrensetta/bin/gcc-ar15"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar15.com"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar15.exe"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar15"
       - "E:/msys2/clang64/bin/gcc-ar15.com"
       - "E:/msys2/clang64/bin/gcc-ar15.exe"
       - "E:/msys2/clang64/bin/gcc-ar15"
@@ -1021,6 +1094,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -1028,10 +1106,12 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -1058,6 +1138,7 @@ events:
       - "E:/msys2/mingw64/bin/"
       - "C:/Program Files/Neovim/bin/"
       - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
       - "E:/msys2/clang64/bin/"
       - "E:/msys2/usr/local/bin/"
       - "E:/msys2/usr/bin/"
@@ -1078,6 +1159,9 @@ events:
       - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib-15.2.com"
       - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib-15.2.exe"
       - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib-15.2"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib-15.2.com"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib-15.2.exe"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib-15.2"
       - "E:/msys2/clang64/bin/gcc-ranlib-15.2.com"
       - "E:/msys2/clang64/bin/gcc-ranlib-15.2.exe"
       - "E:/msys2/clang64/bin/gcc-ranlib-15.2"
@@ -1117,6 +1201,9 @@ events:
       - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib-15.com"
       - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib-15.exe"
       - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib-15"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib-15.com"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib-15.exe"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib-15"
       - "E:/msys2/clang64/bin/gcc-ranlib-15.com"
       - "E:/msys2/clang64/bin/gcc-ranlib-15.exe"
       - "E:/msys2/clang64/bin/gcc-ranlib-15"
@@ -1156,6 +1243,9 @@ events:
       - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib15.com"
       - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib15.exe"
       - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib15"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib15.com"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib15.exe"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib15"
       - "E:/msys2/clang64/bin/gcc-ranlib15.com"
       - "E:/msys2/clang64/bin/gcc-ranlib15.exe"
       - "E:/msys2/clang64/bin/gcc-ranlib15"
@@ -1194,6 +1284,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -1201,10 +1296,1388 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineRCCompiler.cmake:40 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/Platform/Windows-GNU.cmake:169 (enable_language)"
+      - "E:/msys2/clang64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake:2 (__windows_compiler_gnu)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeCXXInformation.cmake:48 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_RC_COMPILER"
+    description: "RC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONM
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Windows - 10.0.19045 - AMD64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmake"
+      - "make"
+      - "smake"
+    candidate_directories:
+      - "E:/msys2/mingw64/bin/"
+      - "C:/Program Files/Neovim/bin/"
+      - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
+      - "E:/msys2/clang64/bin/"
+      - "E:/msys2/usr/local/bin/"
+      - "E:/msys2/usr/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "E:/msys2/usr/bin/site_perl/"
+      - "E:/msys2/usr/bin/vendor_perl/"
+      - "E:/msys2/usr/bin/core_perl/"
+    searched_directories:
+      - "E:/msys2/mingw64/bin/gmake.com"
+      - "E:/msys2/mingw64/bin/gmake.exe"
+      - "E:/msys2/mingw64/bin/gmake"
+      - "C:/Program Files/Neovim/bin/gmake.com"
+      - "C:/Program Files/Neovim/bin/gmake.exe"
+      - "C:/Program Files/Neovim/bin/gmake"
+      - "E:/msys2/home/0xtrensetta/bin/gmake.com"
+      - "E:/msys2/home/0xtrensetta/bin/gmake.exe"
+      - "E:/msys2/home/0xtrensetta/bin/gmake"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gmake.com"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gmake.exe"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gmake"
+      - "E:/msys2/clang64/bin/gmake.com"
+      - "E:/msys2/clang64/bin/gmake.exe"
+      - "E:/msys2/clang64/bin/gmake"
+      - "E:/msys2/usr/local/bin/gmake.com"
+      - "E:/msys2/usr/local/bin/gmake.exe"
+      - "E:/msys2/usr/local/bin/gmake"
+      - "E:/msys2/usr/bin/gmake.com"
+      - "E:/msys2/usr/bin/gmake.exe"
+      - "E:/msys2/usr/bin/gmake"
+      - "C:/Windows/System32/gmake.com"
+      - "C:/Windows/System32/gmake.exe"
+      - "C:/Windows/System32/gmake"
+      - "C:/Windows/gmake.com"
+      - "C:/Windows/gmake.exe"
+      - "C:/Windows/gmake"
+      - "C:/Windows/System32/wbem/gmake.com"
+      - "C:/Windows/System32/wbem/gmake.exe"
+      - "C:/Windows/System32/wbem/gmake"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gmake.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gmake.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gmake"
+      - "E:/msys2/usr/bin/site_perl/gmake.com"
+      - "E:/msys2/usr/bin/site_perl/gmake.exe"
+      - "E:/msys2/usr/bin/site_perl/gmake"
+      - "E:/msys2/usr/bin/vendor_perl/gmake.com"
+      - "E:/msys2/usr/bin/vendor_perl/gmake.exe"
+      - "E:/msys2/usr/bin/vendor_perl/gmake"
+      - "E:/msys2/usr/bin/core_perl/gmake.com"
+      - "E:/msys2/usr/bin/core_perl/gmake.exe"
+      - "E:/msys2/usr/bin/core_perl/gmake"
+      - "E:/msys2/mingw64/bin/make.com"
+      - "E:/msys2/mingw64/bin/make.exe"
+      - "E:/msys2/mingw64/bin/make"
+      - "C:/Program Files/Neovim/bin/make.com"
+      - "C:/Program Files/Neovim/bin/make.exe"
+      - "C:/Program Files/Neovim/bin/make"
+      - "E:/msys2/home/0xtrensetta/bin/make.com"
+      - "E:/msys2/home/0xtrensetta/bin/make.exe"
+      - "E:/msys2/home/0xtrensetta/bin/make"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/make.com"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/make.exe"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/make"
+      - "E:/msys2/clang64/bin/make.com"
+      - "E:/msys2/clang64/bin/make.exe"
+      - "E:/msys2/clang64/bin/make"
+      - "E:/msys2/usr/local/bin/make.com"
+      - "E:/msys2/usr/local/bin/make.exe"
+      - "E:/msys2/usr/local/bin/make"
+      - "E:/msys2/usr/bin/make.com"
+    found: "E:/msys2/usr/bin/make.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\usr\\local\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "C:\\Windows\\System32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "E:\\msys2\\usr\\bin\\site_perl"
+        - "E:\\msys2\\usr\\bin\\vendor_perl"
+        - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER"
+    description: "CXX compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "c++"
+      - "g++"
+      - "cl"
+      - "bcc"
+      - "icx"
+      - "clang++"
+    candidate_directories:
+      - "E:/msys2/mingw64/bin/"
+      - "C:/Program Files/Neovim/bin/"
+      - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
+      - "E:/msys2/clang64/bin/"
+      - "E:/msys2/usr/local/bin/"
+      - "E:/msys2/usr/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "E:/msys2/usr/bin/site_perl/"
+      - "E:/msys2/usr/bin/vendor_perl/"
+      - "E:/msys2/usr/bin/core_perl/"
+    searched_directories:
+      - "E:/msys2/mingw64/bin/c++.com"
+    found: "E:/msys2/mingw64/bin/c++.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\usr\\local\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "C:\\Windows\\System32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "E:\\msys2\\usr\\bin\\site_perl"
+        - "E:\\msys2\\usr\\bin\\vendor_perl"
+        - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "E:/msys2/clang64/share/cmake/Modules/"
+    found: "E:/msys2/clang64/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\usr\\local\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "C:\\Windows\\System32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "E:\\msys2\\usr\\bin\\site_perl"
+        - "E:\\msys2\\usr\\bin\\vendor_perl"
+        - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: E:/msys2/mingw64/bin/c++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        E:/msys2/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles/4.3.4/CompilerIdCXX/a.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ar"
+    candidate_directories:
+      - "E:/msys2/mingw64/bin/"
+      - "C:/Program Files/Neovim/bin/"
+      - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
+      - "E:/msys2/clang64/bin/"
+      - "E:/msys2/usr/local/bin/"
+      - "E:/msys2/usr/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "E:/msys2/usr/bin/site_perl/"
+      - "E:/msys2/usr/bin/vendor_perl/"
+      - "E:/msys2/usr/bin/core_perl/"
+    searched_directories:
+      - "E:/msys2/mingw64/bin/ar.com"
+    found: "E:/msys2/mingw64/bin/ar.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\usr\\local\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "C:\\Windows\\System32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "E:\\msys2\\usr\\bin\\site_perl"
+        - "E:\\msys2\\usr\\bin\\vendor_perl"
+        - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_RANLIB"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ranlib"
+    candidate_directories:
+      - "E:/msys2/mingw64/bin/"
+      - "C:/Program Files/Neovim/bin/"
+      - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
+      - "E:/msys2/clang64/bin/"
+      - "E:/msys2/usr/local/bin/"
+      - "E:/msys2/usr/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "E:/msys2/usr/bin/site_perl/"
+      - "E:/msys2/usr/bin/vendor_perl/"
+      - "E:/msys2/usr/bin/core_perl/"
+    searched_directories:
+      - "E:/msys2/mingw64/bin/ranlib.com"
+    found: "E:/msys2/mingw64/bin/ranlib.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\usr\\local\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "C:\\Windows\\System32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "E:\\msys2\\usr\\bin\\site_perl"
+        - "E:\\msys2\\usr\\bin\\vendor_perl"
+        - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "strip"
+    candidate_directories:
+      - "E:/msys2/mingw64/bin/"
+      - "C:/Program Files/Neovim/bin/"
+      - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
+      - "E:/msys2/clang64/bin/"
+      - "E:/msys2/usr/local/bin/"
+      - "E:/msys2/usr/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "E:/msys2/usr/bin/site_perl/"
+      - "E:/msys2/usr/bin/vendor_perl/"
+      - "E:/msys2/usr/bin/core_perl/"
+    searched_directories:
+      - "E:/msys2/mingw64/bin/strip.com"
+    found: "E:/msys2/mingw64/bin/strip.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\usr\\local\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "C:\\Windows\\System32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "E:\\msys2\\usr\\bin\\site_perl"
+        - "E:\\msys2\\usr\\bin\\vendor_perl"
+        - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ld"
+    candidate_directories:
+      - "E:/msys2/mingw64/bin/"
+      - "C:/Program Files/Neovim/bin/"
+      - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
+      - "E:/msys2/clang64/bin/"
+      - "E:/msys2/usr/local/bin/"
+      - "E:/msys2/usr/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "E:/msys2/usr/bin/site_perl/"
+      - "E:/msys2/usr/bin/vendor_perl/"
+      - "E:/msys2/usr/bin/core_perl/"
+    searched_directories:
+      - "E:/msys2/mingw64/bin/ld.com"
+    found: "E:/msys2/mingw64/bin/ld.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\usr\\local\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "C:\\Windows\\System32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "E:\\msys2\\usr\\bin\\site_perl"
+        - "E:\\msys2\\usr\\bin\\vendor_perl"
+        - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "nm"
+    candidate_directories:
+      - "E:/msys2/mingw64/bin/"
+      - "C:/Program Files/Neovim/bin/"
+      - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
+      - "E:/msys2/clang64/bin/"
+      - "E:/msys2/usr/local/bin/"
+      - "E:/msys2/usr/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "E:/msys2/usr/bin/site_perl/"
+      - "E:/msys2/usr/bin/vendor_perl/"
+      - "E:/msys2/usr/bin/core_perl/"
+    searched_directories:
+      - "E:/msys2/mingw64/bin/nm.com"
+    found: "E:/msys2/mingw64/bin/nm.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\usr\\local\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "C:\\Windows\\System32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "E:\\msys2\\usr\\bin\\site_perl"
+        - "E:\\msys2\\usr\\bin\\vendor_perl"
+        - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objdump"
+    candidate_directories:
+      - "E:/msys2/mingw64/bin/"
+      - "C:/Program Files/Neovim/bin/"
+      - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
+      - "E:/msys2/clang64/bin/"
+      - "E:/msys2/usr/local/bin/"
+      - "E:/msys2/usr/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "E:/msys2/usr/bin/site_perl/"
+      - "E:/msys2/usr/bin/vendor_perl/"
+      - "E:/msys2/usr/bin/core_perl/"
+    searched_directories:
+      - "E:/msys2/mingw64/bin/objdump.com"
+    found: "E:/msys2/mingw64/bin/objdump.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\usr\\local\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "C:\\Windows\\System32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "E:\\msys2\\usr\\bin\\site_perl"
+        - "E:\\msys2\\usr\\bin\\vendor_perl"
+        - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objcopy"
+    candidate_directories:
+      - "E:/msys2/mingw64/bin/"
+      - "C:/Program Files/Neovim/bin/"
+      - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
+      - "E:/msys2/clang64/bin/"
+      - "E:/msys2/usr/local/bin/"
+      - "E:/msys2/usr/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "E:/msys2/usr/bin/site_perl/"
+      - "E:/msys2/usr/bin/vendor_perl/"
+      - "E:/msys2/usr/bin/core_perl/"
+    searched_directories:
+      - "E:/msys2/mingw64/bin/objcopy.com"
+    found: "E:/msys2/mingw64/bin/objcopy.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\usr\\local\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "C:\\Windows\\System32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "E:\\msys2\\usr\\bin\\site_perl"
+        - "E:\\msys2\\usr\\bin\\vendor_perl"
+        - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "readelf"
+    candidate_directories:
+      - "E:/msys2/mingw64/bin/"
+      - "C:/Program Files/Neovim/bin/"
+      - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
+      - "E:/msys2/clang64/bin/"
+      - "E:/msys2/usr/local/bin/"
+      - "E:/msys2/usr/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "E:/msys2/usr/bin/site_perl/"
+      - "E:/msys2/usr/bin/vendor_perl/"
+      - "E:/msys2/usr/bin/core_perl/"
+    searched_directories:
+      - "E:/msys2/mingw64/bin/readelf.com"
+    found: "E:/msys2/mingw64/bin/readelf.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\usr\\local\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "C:\\Windows\\System32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "E:\\msys2\\usr\\bin\\site_perl"
+        - "E:\\msys2\\usr\\bin\\vendor_perl"
+        - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "dlltool"
+    candidate_directories:
+      - "E:/msys2/mingw64/bin/"
+      - "C:/Program Files/Neovim/bin/"
+      - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
+      - "E:/msys2/clang64/bin/"
+      - "E:/msys2/usr/local/bin/"
+      - "E:/msys2/usr/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "E:/msys2/usr/bin/site_perl/"
+      - "E:/msys2/usr/bin/vendor_perl/"
+      - "E:/msys2/usr/bin/core_perl/"
+    searched_directories:
+      - "E:/msys2/mingw64/bin/dlltool.com"
+    found: "E:/msys2/mingw64/bin/dlltool.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\usr\\local\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "C:\\Windows\\System32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "E:\\msys2\\usr\\bin\\site_perl"
+        - "E:\\msys2\\usr\\bin\\vendor_perl"
+        - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "addr2line"
+    candidate_directories:
+      - "E:/msys2/mingw64/bin/"
+      - "C:/Program Files/Neovim/bin/"
+      - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
+      - "E:/msys2/clang64/bin/"
+      - "E:/msys2/usr/local/bin/"
+      - "E:/msys2/usr/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "E:/msys2/usr/bin/site_perl/"
+      - "E:/msys2/usr/bin/vendor_perl/"
+      - "E:/msys2/usr/bin/core_perl/"
+    searched_directories:
+      - "E:/msys2/mingw64/bin/addr2line.com"
+    found: "E:/msys2/mingw64/bin/addr2line.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\usr\\local\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "C:\\Windows\\System32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "E:\\msys2\\usr\\bin\\site_perl"
+        - "E:\\msys2\\usr\\bin\\vendor_perl"
+        - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tapi"
+    candidate_directories:
+      - "E:/msys2/mingw64/bin/"
+      - "C:/Program Files/Neovim/bin/"
+      - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
+      - "E:/msys2/clang64/bin/"
+      - "E:/msys2/usr/local/bin/"
+      - "E:/msys2/usr/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "E:/msys2/usr/bin/site_perl/"
+      - "E:/msys2/usr/bin/vendor_perl/"
+      - "E:/msys2/usr/bin/core_perl/"
+    searched_directories:
+      - "E:/msys2/mingw64/bin/tapi.com"
+      - "E:/msys2/mingw64/bin/tapi.exe"
+      - "E:/msys2/mingw64/bin/tapi"
+      - "C:/Program Files/Neovim/bin/tapi.com"
+      - "C:/Program Files/Neovim/bin/tapi.exe"
+      - "C:/Program Files/Neovim/bin/tapi"
+      - "E:/msys2/home/0xtrensetta/bin/tapi.com"
+      - "E:/msys2/home/0xtrensetta/bin/tapi.exe"
+      - "E:/msys2/home/0xtrensetta/bin/tapi"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/tapi.com"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/tapi.exe"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/tapi"
+      - "E:/msys2/clang64/bin/tapi.com"
+      - "E:/msys2/clang64/bin/tapi.exe"
+      - "E:/msys2/clang64/bin/tapi"
+      - "E:/msys2/usr/local/bin/tapi.com"
+      - "E:/msys2/usr/local/bin/tapi.exe"
+      - "E:/msys2/usr/local/bin/tapi"
+      - "E:/msys2/usr/bin/tapi.com"
+      - "E:/msys2/usr/bin/tapi.exe"
+      - "E:/msys2/usr/bin/tapi"
+      - "C:/Windows/System32/tapi.com"
+      - "C:/Windows/System32/tapi.exe"
+      - "C:/Windows/System32/tapi"
+      - "C:/Windows/tapi.com"
+      - "C:/Windows/tapi.exe"
+      - "C:/Windows/tapi"
+      - "C:/Windows/System32/wbem/tapi.com"
+      - "C:/Windows/System32/wbem/tapi.exe"
+      - "C:/Windows/System32/wbem/tapi"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/tapi.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/tapi.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/tapi"
+      - "E:/msys2/usr/bin/site_perl/tapi.com"
+      - "E:/msys2/usr/bin/site_perl/tapi.exe"
+      - "E:/msys2/usr/bin/site_perl/tapi"
+      - "E:/msys2/usr/bin/vendor_perl/tapi.com"
+      - "E:/msys2/usr/bin/vendor_perl/tapi.exe"
+      - "E:/msys2/usr/bin/vendor_perl/tapi"
+      - "E:/msys2/usr/bin/core_perl/tapi.com"
+      - "E:/msys2/usr/bin/core_perl/tapi.exe"
+      - "E:/msys2/usr/bin/core_perl/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\usr\\local\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "C:\\Windows\\System32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "E:\\msys2\\usr\\bin\\site_perl"
+        - "E:\\msys2\\usr\\bin\\vendor_perl"
+        - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ar-15.2"
+      - "gcc-ar-15"
+      - "gcc-ar15"
+      - "gcc-ar"
+    candidate_directories:
+      - "E:/msys2/mingw64/bin/"
+      - "C:/Program Files/Neovim/bin/"
+      - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
+      - "E:/msys2/clang64/bin/"
+      - "E:/msys2/usr/local/bin/"
+      - "E:/msys2/usr/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "E:/msys2/usr/bin/site_perl/"
+      - "E:/msys2/usr/bin/vendor_perl/"
+      - "E:/msys2/usr/bin/core_perl/"
+    searched_directories:
+      - "E:/msys2/mingw64/bin/gcc-ar-15.2.com"
+      - "E:/msys2/mingw64/bin/gcc-ar-15.2.exe"
+      - "E:/msys2/mingw64/bin/gcc-ar-15.2"
+      - "C:/Program Files/Neovim/bin/gcc-ar-15.2.com"
+      - "C:/Program Files/Neovim/bin/gcc-ar-15.2.exe"
+      - "C:/Program Files/Neovim/bin/gcc-ar-15.2"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ar-15.2.com"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ar-15.2.exe"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ar-15.2"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar-15.2.com"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar-15.2.exe"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar-15.2"
+      - "E:/msys2/clang64/bin/gcc-ar-15.2.com"
+      - "E:/msys2/clang64/bin/gcc-ar-15.2.exe"
+      - "E:/msys2/clang64/bin/gcc-ar-15.2"
+      - "E:/msys2/usr/local/bin/gcc-ar-15.2.com"
+      - "E:/msys2/usr/local/bin/gcc-ar-15.2.exe"
+      - "E:/msys2/usr/local/bin/gcc-ar-15.2"
+      - "E:/msys2/usr/bin/gcc-ar-15.2.com"
+      - "E:/msys2/usr/bin/gcc-ar-15.2.exe"
+      - "E:/msys2/usr/bin/gcc-ar-15.2"
+      - "C:/Windows/System32/gcc-ar-15.2.com"
+      - "C:/Windows/System32/gcc-ar-15.2.exe"
+      - "C:/Windows/System32/gcc-ar-15.2"
+      - "C:/Windows/gcc-ar-15.2.com"
+      - "C:/Windows/gcc-ar-15.2.exe"
+      - "C:/Windows/gcc-ar-15.2"
+      - "C:/Windows/System32/wbem/gcc-ar-15.2.com"
+      - "C:/Windows/System32/wbem/gcc-ar-15.2.exe"
+      - "C:/Windows/System32/wbem/gcc-ar-15.2"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-15.2.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-15.2.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-15.2"
+      - "E:/msys2/usr/bin/site_perl/gcc-ar-15.2.com"
+      - "E:/msys2/usr/bin/site_perl/gcc-ar-15.2.exe"
+      - "E:/msys2/usr/bin/site_perl/gcc-ar-15.2"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ar-15.2.com"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ar-15.2.exe"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ar-15.2"
+      - "E:/msys2/usr/bin/core_perl/gcc-ar-15.2.com"
+      - "E:/msys2/usr/bin/core_perl/gcc-ar-15.2.exe"
+      - "E:/msys2/usr/bin/core_perl/gcc-ar-15.2"
+      - "E:/msys2/mingw64/bin/gcc-ar-15.com"
+      - "E:/msys2/mingw64/bin/gcc-ar-15.exe"
+      - "E:/msys2/mingw64/bin/gcc-ar-15"
+      - "C:/Program Files/Neovim/bin/gcc-ar-15.com"
+      - "C:/Program Files/Neovim/bin/gcc-ar-15.exe"
+      - "C:/Program Files/Neovim/bin/gcc-ar-15"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ar-15.com"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ar-15.exe"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ar-15"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar-15.com"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar-15.exe"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar-15"
+      - "E:/msys2/clang64/bin/gcc-ar-15.com"
+      - "E:/msys2/clang64/bin/gcc-ar-15.exe"
+      - "E:/msys2/clang64/bin/gcc-ar-15"
+      - "E:/msys2/usr/local/bin/gcc-ar-15.com"
+      - "E:/msys2/usr/local/bin/gcc-ar-15.exe"
+      - "E:/msys2/usr/local/bin/gcc-ar-15"
+      - "E:/msys2/usr/bin/gcc-ar-15.com"
+      - "E:/msys2/usr/bin/gcc-ar-15.exe"
+      - "E:/msys2/usr/bin/gcc-ar-15"
+      - "C:/Windows/System32/gcc-ar-15.com"
+      - "C:/Windows/System32/gcc-ar-15.exe"
+      - "C:/Windows/System32/gcc-ar-15"
+      - "C:/Windows/gcc-ar-15.com"
+      - "C:/Windows/gcc-ar-15.exe"
+      - "C:/Windows/gcc-ar-15"
+      - "C:/Windows/System32/wbem/gcc-ar-15.com"
+      - "C:/Windows/System32/wbem/gcc-ar-15.exe"
+      - "C:/Windows/System32/wbem/gcc-ar-15"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-15.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-15.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-15"
+      - "E:/msys2/usr/bin/site_perl/gcc-ar-15.com"
+      - "E:/msys2/usr/bin/site_perl/gcc-ar-15.exe"
+      - "E:/msys2/usr/bin/site_perl/gcc-ar-15"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ar-15.com"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ar-15.exe"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ar-15"
+      - "E:/msys2/usr/bin/core_perl/gcc-ar-15.com"
+      - "E:/msys2/usr/bin/core_perl/gcc-ar-15.exe"
+      - "E:/msys2/usr/bin/core_perl/gcc-ar-15"
+      - "E:/msys2/mingw64/bin/gcc-ar15.com"
+      - "E:/msys2/mingw64/bin/gcc-ar15.exe"
+      - "E:/msys2/mingw64/bin/gcc-ar15"
+      - "C:/Program Files/Neovim/bin/gcc-ar15.com"
+      - "C:/Program Files/Neovim/bin/gcc-ar15.exe"
+      - "C:/Program Files/Neovim/bin/gcc-ar15"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ar15.com"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ar15.exe"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ar15"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar15.com"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar15.exe"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ar15"
+      - "E:/msys2/clang64/bin/gcc-ar15.com"
+      - "E:/msys2/clang64/bin/gcc-ar15.exe"
+      - "E:/msys2/clang64/bin/gcc-ar15"
+      - "E:/msys2/usr/local/bin/gcc-ar15.com"
+      - "E:/msys2/usr/local/bin/gcc-ar15.exe"
+      - "E:/msys2/usr/local/bin/gcc-ar15"
+      - "E:/msys2/usr/bin/gcc-ar15.com"
+      - "E:/msys2/usr/bin/gcc-ar15.exe"
+      - "E:/msys2/usr/bin/gcc-ar15"
+      - "C:/Windows/System32/gcc-ar15.com"
+      - "C:/Windows/System32/gcc-ar15.exe"
+      - "C:/Windows/System32/gcc-ar15"
+      - "C:/Windows/gcc-ar15.com"
+      - "C:/Windows/gcc-ar15.exe"
+      - "C:/Windows/gcc-ar15"
+      - "C:/Windows/System32/wbem/gcc-ar15.com"
+      - "C:/Windows/System32/wbem/gcc-ar15.exe"
+      - "C:/Windows/System32/wbem/gcc-ar15"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar15.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar15.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar15"
+      - "E:/msys2/usr/bin/site_perl/gcc-ar15.com"
+      - "E:/msys2/usr/bin/site_perl/gcc-ar15.exe"
+      - "E:/msys2/usr/bin/site_perl/gcc-ar15"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ar15.com"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ar15.exe"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ar15"
+      - "E:/msys2/usr/bin/core_perl/gcc-ar15.com"
+      - "E:/msys2/usr/bin/core_perl/gcc-ar15.exe"
+      - "E:/msys2/usr/bin/core_perl/gcc-ar15"
+      - "E:/msys2/mingw64/bin/gcc-ar.com"
+    found: "E:/msys2/mingw64/bin/gcc-ar.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\usr\\local\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "C:\\Windows\\System32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "E:\\msys2\\usr\\bin\\site_perl"
+        - "E:\\msys2\\usr\\bin\\vendor_perl"
+        - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "E:/msys2/clang64/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "E:/msys2/clang64/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ranlib-15.2"
+      - "gcc-ranlib-15"
+      - "gcc-ranlib15"
+      - "gcc-ranlib"
+    candidate_directories:
+      - "E:/msys2/mingw64/bin/"
+      - "C:/Program Files/Neovim/bin/"
+      - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
+      - "E:/msys2/clang64/bin/"
+      - "E:/msys2/usr/local/bin/"
+      - "E:/msys2/usr/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "E:/msys2/usr/bin/site_perl/"
+      - "E:/msys2/usr/bin/vendor_perl/"
+      - "E:/msys2/usr/bin/core_perl/"
+    searched_directories:
+      - "E:/msys2/mingw64/bin/gcc-ranlib-15.2.com"
+      - "E:/msys2/mingw64/bin/gcc-ranlib-15.2.exe"
+      - "E:/msys2/mingw64/bin/gcc-ranlib-15.2"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib-15.2.com"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib-15.2.exe"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib-15.2"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib-15.2.com"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib-15.2.exe"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib-15.2"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib-15.2.com"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib-15.2.exe"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib-15.2"
+      - "E:/msys2/clang64/bin/gcc-ranlib-15.2.com"
+      - "E:/msys2/clang64/bin/gcc-ranlib-15.2.exe"
+      - "E:/msys2/clang64/bin/gcc-ranlib-15.2"
+      - "E:/msys2/usr/local/bin/gcc-ranlib-15.2.com"
+      - "E:/msys2/usr/local/bin/gcc-ranlib-15.2.exe"
+      - "E:/msys2/usr/local/bin/gcc-ranlib-15.2"
+      - "E:/msys2/usr/bin/gcc-ranlib-15.2.com"
+      - "E:/msys2/usr/bin/gcc-ranlib-15.2.exe"
+      - "E:/msys2/usr/bin/gcc-ranlib-15.2"
+      - "C:/Windows/System32/gcc-ranlib-15.2.com"
+      - "C:/Windows/System32/gcc-ranlib-15.2.exe"
+      - "C:/Windows/System32/gcc-ranlib-15.2"
+      - "C:/Windows/gcc-ranlib-15.2.com"
+      - "C:/Windows/gcc-ranlib-15.2.exe"
+      - "C:/Windows/gcc-ranlib-15.2"
+      - "C:/Windows/System32/wbem/gcc-ranlib-15.2.com"
+      - "C:/Windows/System32/wbem/gcc-ranlib-15.2.exe"
+      - "C:/Windows/System32/wbem/gcc-ranlib-15.2"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-15.2.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-15.2.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-15.2"
+      - "E:/msys2/usr/bin/site_perl/gcc-ranlib-15.2.com"
+      - "E:/msys2/usr/bin/site_perl/gcc-ranlib-15.2.exe"
+      - "E:/msys2/usr/bin/site_perl/gcc-ranlib-15.2"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ranlib-15.2.com"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ranlib-15.2.exe"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ranlib-15.2"
+      - "E:/msys2/usr/bin/core_perl/gcc-ranlib-15.2.com"
+      - "E:/msys2/usr/bin/core_perl/gcc-ranlib-15.2.exe"
+      - "E:/msys2/usr/bin/core_perl/gcc-ranlib-15.2"
+      - "E:/msys2/mingw64/bin/gcc-ranlib-15.com"
+      - "E:/msys2/mingw64/bin/gcc-ranlib-15.exe"
+      - "E:/msys2/mingw64/bin/gcc-ranlib-15"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib-15.com"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib-15.exe"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib-15"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib-15.com"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib-15.exe"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib-15"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib-15.com"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib-15.exe"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib-15"
+      - "E:/msys2/clang64/bin/gcc-ranlib-15.com"
+      - "E:/msys2/clang64/bin/gcc-ranlib-15.exe"
+      - "E:/msys2/clang64/bin/gcc-ranlib-15"
+      - "E:/msys2/usr/local/bin/gcc-ranlib-15.com"
+      - "E:/msys2/usr/local/bin/gcc-ranlib-15.exe"
+      - "E:/msys2/usr/local/bin/gcc-ranlib-15"
+      - "E:/msys2/usr/bin/gcc-ranlib-15.com"
+      - "E:/msys2/usr/bin/gcc-ranlib-15.exe"
+      - "E:/msys2/usr/bin/gcc-ranlib-15"
+      - "C:/Windows/System32/gcc-ranlib-15.com"
+      - "C:/Windows/System32/gcc-ranlib-15.exe"
+      - "C:/Windows/System32/gcc-ranlib-15"
+      - "C:/Windows/gcc-ranlib-15.com"
+      - "C:/Windows/gcc-ranlib-15.exe"
+      - "C:/Windows/gcc-ranlib-15"
+      - "C:/Windows/System32/wbem/gcc-ranlib-15.com"
+      - "C:/Windows/System32/wbem/gcc-ranlib-15.exe"
+      - "C:/Windows/System32/wbem/gcc-ranlib-15"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-15.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-15.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-15"
+      - "E:/msys2/usr/bin/site_perl/gcc-ranlib-15.com"
+      - "E:/msys2/usr/bin/site_perl/gcc-ranlib-15.exe"
+      - "E:/msys2/usr/bin/site_perl/gcc-ranlib-15"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ranlib-15.com"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ranlib-15.exe"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ranlib-15"
+      - "E:/msys2/usr/bin/core_perl/gcc-ranlib-15.com"
+      - "E:/msys2/usr/bin/core_perl/gcc-ranlib-15.exe"
+      - "E:/msys2/usr/bin/core_perl/gcc-ranlib-15"
+      - "E:/msys2/mingw64/bin/gcc-ranlib15.com"
+      - "E:/msys2/mingw64/bin/gcc-ranlib15.exe"
+      - "E:/msys2/mingw64/bin/gcc-ranlib15"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib15.com"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib15.exe"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib15"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib15.com"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib15.exe"
+      - "E:/msys2/home/0xtrensetta/bin/gcc-ranlib15"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib15.com"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib15.exe"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/gcc-ranlib15"
+      - "E:/msys2/clang64/bin/gcc-ranlib15.com"
+      - "E:/msys2/clang64/bin/gcc-ranlib15.exe"
+      - "E:/msys2/clang64/bin/gcc-ranlib15"
+      - "E:/msys2/usr/local/bin/gcc-ranlib15.com"
+      - "E:/msys2/usr/local/bin/gcc-ranlib15.exe"
+      - "E:/msys2/usr/local/bin/gcc-ranlib15"
+      - "E:/msys2/usr/bin/gcc-ranlib15.com"
+      - "E:/msys2/usr/bin/gcc-ranlib15.exe"
+      - "E:/msys2/usr/bin/gcc-ranlib15"
+      - "C:/Windows/System32/gcc-ranlib15.com"
+      - "C:/Windows/System32/gcc-ranlib15.exe"
+      - "C:/Windows/System32/gcc-ranlib15"
+      - "C:/Windows/gcc-ranlib15.com"
+      - "C:/Windows/gcc-ranlib15.exe"
+      - "C:/Windows/gcc-ranlib15"
+      - "C:/Windows/System32/wbem/gcc-ranlib15.com"
+      - "C:/Windows/System32/wbem/gcc-ranlib15.exe"
+      - "C:/Windows/System32/wbem/gcc-ranlib15"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib15.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib15.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib15"
+      - "E:/msys2/usr/bin/site_perl/gcc-ranlib15.com"
+      - "E:/msys2/usr/bin/site_perl/gcc-ranlib15.exe"
+      - "E:/msys2/usr/bin/site_perl/gcc-ranlib15"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ranlib15.com"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ranlib15.exe"
+      - "E:/msys2/usr/bin/vendor_perl/gcc-ranlib15"
+      - "E:/msys2/usr/bin/core_perl/gcc-ranlib15.com"
+      - "E:/msys2/usr/bin/core_perl/gcc-ranlib15.exe"
+      - "E:/msys2/usr/bin/core_perl/gcc-ranlib15"
+      - "E:/msys2/mingw64/bin/gcc-ranlib.com"
+    found: "E:/msys2/mingw64/bin/gcc-ranlib.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\usr\\local\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "E:\\msys2\\usr\\bin"
+        - "C:\\Windows\\System32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "E:\\msys2\\usr\\bin\\site_perl"
+        - "E:\\msys2\\usr\\bin\\vendor_perl"
+        - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -1231,6 +2704,7 @@ events:
       - "E:/msys2/mingw64/bin/"
       - "C:/Program Files/Neovim/bin/"
       - "E:/msys2/home/0xtrensetta/bin/"
+      - "C:/Users/iwant/AppData/Local/nvim-data/mason/bin/"
       - "E:/msys2/clang64/bin/"
       - "E:/msys2/usr/local/bin/"
       - "E:/msys2/usr/bin/"
@@ -1262,6 +2736,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -1269,10 +2748,12 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Xerxes"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "E:/msys2/clang64"
@@ -1289,8 +2770,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "E:/msys2/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles/CMakeScratch/TryCompile-qmerxe"
-      binary: "E:/msys2/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles/CMakeScratch/TryCompile-qmerxe"
+      source: "E:/msys2/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles/CMakeScratch/TryCompile-ra908m"
+      binary: "E:/msys2/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles/CMakeScratch/TryCompile-ra908m"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1301,13 +2782,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'E:/msys2/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles/CMakeScratch/TryCompile-qmerxe'
+        Change Dir: 'E:/msys2/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles/CMakeScratch/TryCompile-ra908m'
         
-        Run Build Command(s): E:/msys2/clang64/bin/cmake.exe -E env VERBOSE=1 E:/msys2/usr/bin/make.exe -f Makefile cmTC_ebc4a/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_ebc4a.dir/build.make CMakeFiles/cmTC_ebc4a.dir/build
-        make[1]: Entering directory '/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles/CMakeScratch/TryCompile-qmerxe'
-        Building CXX object CMakeFiles/cmTC_ebc4a.dir/CMakeCXXCompilerABI.cpp.obj
-        E:/msys2/mingw64/bin/c++.exe   -v -o CMakeFiles/cmTC_ebc4a.dir/CMakeCXXCompilerABI.cpp.obj -c E:/msys2/clang64/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): E:/msys2/clang64/bin/cmake.exe -E env VERBOSE=1 E:/msys2/usr/bin/make.exe -f Makefile cmTC_19813/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_19813.dir/build.make CMakeFiles/cmTC_19813.dir/build
+        make[1]: Entering directory '/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles/CMakeScratch/TryCompile-ra908m'
+        Building CXX object CMakeFiles/cmTC_19813.dir/CMakeCXXCompilerABI.cpp.obj
+        E:/msys2/mingw64/bin/c++.exe   -v -o CMakeFiles/cmTC_19813.dir/CMakeCXXCompilerABI.cpp.obj -c E:/msys2/clang64/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=E:\\msys2\\mingw64\\bin\\c++.exe
         Target: x86_64-w64-mingw32
@@ -1315,8 +2796,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.0 (Rev8, Built by MSYS2 project) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ebc4a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_ebc4a.dir/'
-         E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1plus.exe -quiet -v -iprefix E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT E:/msys2/clang64/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ebc4a.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o E:\\msys2\\tmp\\ccgK74vk.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_19813.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_19813.dir/'
+         E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1plus.exe -quiet -v -iprefix E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT E:/msys2/clang64/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_19813.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o E:\\msys2\\tmp\\ccRryrzi.s
         GNU C++17 (Rev8, Built by MSYS2 project) version 15.2.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -1341,16 +2822,16 @@ events:
          E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed
         End of search list.
         Compiler executable checksum: e7386b44e3a7fd4f3b26b08cdd95994a
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ebc4a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_ebc4a.dir/'
-         E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_ebc4a.dir/CMakeCXXCompilerABI.cpp.obj E:\\msys2\\tmp\\ccgK74vk.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_19813.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_19813.dir/'
+         E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_19813.dir/CMakeCXXCompilerABI.cpp.obj E:\\msys2\\tmp\\ccRryrzi.s
         GNU assembler version 2.45.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.45.1
         COMPILER_PATH=E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;E:/msys2/mingw64/bin/../lib/gcc/;E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;E:/msys2/mingw64/bin/../lib/gcc/;E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ebc4a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_ebc4a.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_ebc4a.exe
-        E:/msys2/clang64/bin/cmake.exe -E rm -f CMakeFiles/cmTC_ebc4a.dir/objects.a
-        E:/msys2/mingw64/bin/ar.exe qc CMakeFiles/cmTC_ebc4a.dir/objects.a @CMakeFiles/cmTC_ebc4a.dir/objects1.rsp
-        E:/msys2/mingw64/bin/c++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles/cmTC_ebc4a.dir/objects.a -Wl,--no-whole-archive -o cmTC_ebc4a.exe -Wl,--out-implib,libcmTC_ebc4a.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_19813.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_19813.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_19813.exe
+        E:/msys2/clang64/bin/cmake.exe -E rm -f CMakeFiles/cmTC_19813.dir/objects.a
+        E:/msys2/mingw64/bin/ar.exe qc CMakeFiles/cmTC_19813.dir/objects.a @CMakeFiles/cmTC_19813.dir/objects1.rsp
+        E:/msys2/mingw64/bin/c++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles/cmTC_19813.dir/objects.a -Wl,--no-whole-archive -o cmTC_19813.exe -Wl,--out-implib,libcmTC_19813.dll.a -Wl,--major-image-version,0,--minor-image-version,0
         Using built-in specs.
         COLLECT_GCC=E:\\msys2\\mingw64\\bin\\c++.exe
         COLLECT_LTO_WRAPPER=E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe
@@ -1361,13 +2842,13 @@ events:
         gcc version 15.2.0 (Rev8, Built by MSYS2 project) 
         COMPILER_PATH=E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;E:/msys2/mingw64/bin/../lib/gcc/;E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;E:/msys2/mingw64/bin/../lib/gcc/;E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ebc4a.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_ebc4a.'
-         E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=E:\\msys2\\tmp\\ccLRr80n.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_ebc4a.exe E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LE:/msys2/mingw64/bin/../lib/gcc -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles/cmTC_ebc4a.dir/objects.a --no-whole-archive --out-implib libcmTC_ebc4a.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_19813.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_19813.'
+         E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=E:\\msys2\\tmp\\ccJrOvBE.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_19813.exe E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LE:/msys2/mingw64/bin/../lib/gcc -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles/cmTC_19813.dir/objects.a --no-whole-archive --out-implib libcmTC_19813.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
         collect2 version 15.2.0
-        E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=E:\\msys2\\tmp\\ccLRr80n.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_ebc4a.exe E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LE:/msys2/mingw64/bin/../lib/gcc -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles/cmTC_ebc4a.dir/objects.a --no-whole-archive --out-implib libcmTC_ebc4a.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=E:\\msys2\\tmp\\ccJrOvBE.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_19813.exe E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LE:/msys2/mingw64/bin/../lib/gcc -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles/cmTC_19813.dir/objects.a --no-whole-archive --out-implib libcmTC_19813.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
         GNU ld (GNU Binutils) 2.45.1
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ebc4a.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_ebc4a.'
-        make[1]: Leaving directory '/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles/CMakeScratch/TryCompile-qmerxe'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_19813.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_19813.'
+        make[1]: Leaving directory '/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles/CMakeScratch/TryCompile-ra908m'
         
       exitCode: 0
   -
@@ -1406,13 +2887,13 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'E:/msys2/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles/CMakeScratch/TryCompile-qmerxe']
+        ignore line: [Change Dir: 'E:/msys2/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles/CMakeScratch/TryCompile-ra908m']
         ignore line: []
-        ignore line: [Run Build Command(s): E:/msys2/clang64/bin/cmake.exe -E env VERBOSE=1 E:/msys2/usr/bin/make.exe -f Makefile cmTC_ebc4a/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_ebc4a.dir/build.make CMakeFiles/cmTC_ebc4a.dir/build]
-        ignore line: [make[1]: Entering directory '/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles/CMakeScratch/TryCompile-qmerxe']
-        ignore line: [Building CXX object CMakeFiles/cmTC_ebc4a.dir/CMakeCXXCompilerABI.cpp.obj]
-        ignore line: [E:/msys2/mingw64/bin/c++.exe   -v -o CMakeFiles/cmTC_ebc4a.dir/CMakeCXXCompilerABI.cpp.obj -c E:/msys2/clang64/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): E:/msys2/clang64/bin/cmake.exe -E env VERBOSE=1 E:/msys2/usr/bin/make.exe -f Makefile cmTC_19813/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_19813.dir/build.make CMakeFiles/cmTC_19813.dir/build]
+        ignore line: [make[1]: Entering directory '/home/0xtrensetta/Projects/Xerxes/build/CMakeFiles/CMakeScratch/TryCompile-ra908m']
+        ignore line: [Building CXX object CMakeFiles/cmTC_19813.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [E:/msys2/mingw64/bin/c++.exe   -v -o CMakeFiles/cmTC_19813.dir/CMakeCXXCompilerABI.cpp.obj -c E:/msys2/clang64/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=E:\\msys2\\mingw64\\bin\\c++.exe]
         ignore line: [Target: x86_64-w64-mingw32]
@@ -1420,8 +2901,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.0 (Rev8  Built by MSYS2 project) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ebc4a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_ebc4a.dir/']
-        ignore line: [ E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1plus.exe -quiet -v -iprefix E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT E:/msys2/clang64/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ebc4a.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o E:\\msys2\\tmp\\ccgK74vk.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_19813.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_19813.dir/']
+        ignore line: [ E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1plus.exe -quiet -v -iprefix E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT E:/msys2/clang64/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_19813.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o E:\\msys2\\tmp\\ccRryrzi.s]
         ignore line: [GNU C++17 (Rev8  Built by MSYS2 project) version 15.2.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -1446,8 +2927,8 @@ events:
         ignore line: [ E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: e7386b44e3a7fd4f3b26b08cdd95994a]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ebc4a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_ebc4a.dir/']
-        ignore line: [ E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_ebc4a.dir/CMakeCXXCompilerABI.cpp.obj E:\\msys2\\tmp\\ccgK74vk.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_19813.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_19813.dir/']
+        ignore line: [ E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_19813.dir/CMakeCXXCompilerABI.cpp.obj E:\\msys2\\tmp\\ccRryrzi.s]
         ignore line: [GNU assembler version 2.45.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.45.1]
         ignore line: [COMPILER_PATH=E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/]
         ignore line: [E:/msys2/mingw64/bin/../lib/gcc/]
@@ -1458,11 +2939,11 @@ events:
         ignore line: [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
         ignore line: [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ebc4a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_ebc4a.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_ebc4a.exe]
-        ignore line: [E:/msys2/clang64/bin/cmake.exe -E rm -f CMakeFiles/cmTC_ebc4a.dir/objects.a]
-        ignore line: [E:/msys2/mingw64/bin/ar.exe qc CMakeFiles/cmTC_ebc4a.dir/objects.a @CMakeFiles/cmTC_ebc4a.dir/objects1.rsp]
-        ignore line: [E:/msys2/mingw64/bin/c++.exe  -v -Wl -v -Wl --whole-archive CMakeFiles/cmTC_ebc4a.dir/objects.a -Wl --no-whole-archive -o cmTC_ebc4a.exe -Wl --out-implib libcmTC_ebc4a.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_19813.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_19813.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_19813.exe]
+        ignore line: [E:/msys2/clang64/bin/cmake.exe -E rm -f CMakeFiles/cmTC_19813.dir/objects.a]
+        ignore line: [E:/msys2/mingw64/bin/ar.exe qc CMakeFiles/cmTC_19813.dir/objects.a @CMakeFiles/cmTC_19813.dir/objects1.rsp]
+        ignore line: [E:/msys2/mingw64/bin/c++.exe  -v -Wl -v -Wl --whole-archive CMakeFiles/cmTC_19813.dir/objects.a -Wl --no-whole-archive -o cmTC_19813.exe -Wl --out-implib libcmTC_19813.dll.a -Wl --major-image-version 0 --minor-image-version 0]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=E:\\msys2\\mingw64\\bin\\c++.exe]
         ignore line: [COLLECT_LTO_WRAPPER=E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe]
@@ -1480,13 +2961,13 @@ events:
         ignore line: [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
         ignore line: [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ebc4a.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_ebc4a.']
-        link line: [ E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=E:\\msys2\\tmp\\ccLRr80n.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_ebc4a.exe E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LE:/msys2/mingw64/bin/../lib/gcc -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles/cmTC_ebc4a.dir/objects.a --no-whole-archive --out-implib libcmTC_ebc4a.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_19813.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_19813.']
+        link line: [ E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=E:\\msys2\\tmp\\ccJrOvBE.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_19813.exe E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LE:/msys2/mingw64/bin/../lib/gcc -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles/cmTC_19813.dir/objects.a --no-whole-archive --out-implib libcmTC_19813.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
           arg [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=E:\\msys2\\tmp\\ccLRr80n.res] ==> ignore
+          arg [-plugin-opt=-fresolution=E:\\msys2\\tmp\\ccJrOvBE.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -1508,7 +2989,7 @@ events:
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_ebc4a.exe] ==> ignore
+          arg [cmTC_19813.exe] ==> ignore
           arg [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o] ==> obj [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o]
           arg [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o] ==> obj [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o]
           arg [-LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0] ==> dir [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0]
@@ -1519,10 +3000,10 @@ events:
           arg [-LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..] ==> dir [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..]
           arg [-v] ==> ignore
           arg [--whole-archive] ==> ignore
-          arg [CMakeFiles/cmTC_ebc4a.dir/objects.a] ==> ignore
+          arg [CMakeFiles/cmTC_19813.dir/objects.a] ==> ignore
           arg [--no-whole-archive] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_ebc4a.dll.a] ==> ignore
+          arg [libcmTC_19813.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -1548,7 +3029,7 @@ events:
           arg [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o] ==> obj [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o]
           arg [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o] ==> obj [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
         ignore line: [collect2 version 15.2.0]
-        ignore line: [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=E:\\msys2\\tmp\\ccLRr80n.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_ebc4a.exe E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LE:/msys2/mingw64/bin/../lib/gcc -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles/cmTC_ebc4a.dir/objects.a --no-whole-archive --out-implib libcmTC_ebc4a.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        ignore line: [E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=E:\\msys2\\tmp\\ccJrOvBE.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_19813.exe E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LE:/msys2/mingw64/bin/../lib/gcc -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LE:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles/cmTC_19813.dir/objects.a --no-whole-archive --out-implib libcmTC_19813.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o E:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
         linker tool for 'CXX': E:/msys2/mingw64/x86_64-w64-mingw32/bin/ld.exe
         remove lib [msvcrt]
         remove lib [msvcrt]
@@ -1682,6 +3163,11 @@ events:
         - "C:\\Program Files\\Neovim\\bin"
         - "E:\\msys2\\home\\0xtrensetta\\bin"
         - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Users\\iwant\\AppData\\Local\\nvim-data\\mason\\bin"
+        - "E:\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "E:\\msys2\\home\\0xtrensetta\\bin"
+        - "E:\\msys2\\mingw64\\bin"
         - "E:\\msys2\\clang64\\bin"
         - "E:\\msys2\\usr\\local\\bin"
         - "E:\\msys2\\usr\\bin"
@@ -1689,10 +3175,12 @@ events:
         - "C:\\Windows\\System32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
         - "E:\\msys2\\usr\\bin\\site_perl"
         - "E:\\msys2\\usr\\bin\\vendor_perl"
         - "E:\\msys2\\usr\\bin\\core_perl"
+        - "E:\\msys2\\clang64\\bin"
+        - "E:\\msys2\\clang64\\bin"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Xerxes"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "E:/msys2/clang64"

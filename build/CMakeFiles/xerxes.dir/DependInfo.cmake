@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "E:/msys2/home/0xtrensetta/Projects/Xerxes/src/core/window/window.cpp" "CMakeFiles/xerxes.dir/src/core/window/window.cpp.obj" "gcc" "CMakeFiles/xerxes.dir/src/core/window/window.cpp.obj.d"
   "E:/msys2/home/0xtrensetta/Projects/Xerxes/src/main.cpp" "CMakeFiles/xerxes.dir/src/main.cpp.obj" "gcc" "CMakeFiles/xerxes.dir/src/main.cpp.obj.d"
   )
 

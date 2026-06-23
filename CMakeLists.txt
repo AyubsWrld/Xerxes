@@ -6,10 +6,8 @@ project(
     VERSION 0.1
 )
 
-
-
-# set(CMAKE_CXX_COMPILER /clang64/bin/clang++)
-# set(CMAKE_C_COMPILER /clang64/bin/clang)
+set(CMAKE_CXX_COMPILER /clang64/bin/clang++)
+set(CMAKE_C_COMPILER /clang64/bin/clang)
 
 set(CMAKE_CXX_STANDARD 23) 
 set(CMAKE_CXX_STANDARD_REQUIRED On)
@@ -22,15 +20,21 @@ target_include_directories(xerxes PRIVATE ${CMAKE_SOURCE_DIR}/include)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/external/SDL3-3.4.10")
 find_package(SDL3 REQUIRED CONFIG COMPONENTS SDL3-shared)
+
+target_sources(xerxes PRIVATE "${CMAKE_SOURCE_DIR}/src/core/window/window.cpp")
 target_link_libraries(
     xerxes 
     PRIVATE
     SDL3::SDL3
+    opengl32
+    glew32
 )
+
 target_include_directories(
     xerxes 
     PUBLIC
     SDL3::SDL3
+    /mingw64/include/GL/ # todo: fix this.
 )
 
 # if(WIN32)
