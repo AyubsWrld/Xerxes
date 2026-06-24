@@ -1,3 +1,0 @@
-E:/msys2/home/0xtrensetta/Projects/Xerxes/Build/CMakeFiles/xerxes.dir
-E:/msys2/home/0xtrensetta/Projects/Xerxes/Build/CMakeFiles/edit_cache.dir
-E:/msys2/home/0xtrensetta/Projects/Xerxes/Build/CMakeFiles/rebuild_cache.dir
