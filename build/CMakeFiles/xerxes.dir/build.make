@@ -77,49 +77,83 @@ CMakeFiles/xerxes.dir/Source/main.cpp.obj: CMakeFiles/xerxes.dir/includes_CXX.rs
 CMakeFiles/xerxes.dir/Source/main.cpp.obj: E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/main.cpp
 CMakeFiles/xerxes.dir/Source/main.cpp.obj: CMakeFiles/xerxes.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:/msys2/home/0xtrensetta/Projects/Xerxes/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/xerxes.dir/Source/main.cpp.obj"
-	/clang64/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xerxes.dir/Source/main.cpp.obj -MF CMakeFiles/xerxes.dir/Source/main.cpp.obj.d -o CMakeFiles/xerxes.dir/Source/main.cpp.obj -c E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/main.cpp
+	E:/msys2/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xerxes.dir/Source/main.cpp.obj -MF CMakeFiles/xerxes.dir/Source/main.cpp.obj.d -o CMakeFiles/xerxes.dir/Source/main.cpp.obj -c E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/main.cpp
 
 CMakeFiles/xerxes.dir/Source/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/xerxes.dir/Source/main.cpp.i"
-	/clang64/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/main.cpp > CMakeFiles/xerxes.dir/Source/main.cpp.i
+	E:/msys2/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/main.cpp > CMakeFiles/xerxes.dir/Source/main.cpp.i
 
 CMakeFiles/xerxes.dir/Source/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/xerxes.dir/Source/main.cpp.s"
-	/clang64/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/main.cpp -o CMakeFiles/xerxes.dir/Source/main.cpp.s
+	E:/msys2/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/main.cpp -o CMakeFiles/xerxes.dir/Source/main.cpp.s
 
 CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.obj: CMakeFiles/xerxes.dir/flags.make
 CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.obj: CMakeFiles/xerxes.dir/includes_CXX.rsp
 CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.obj: E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Core/Window/Window.cpp
 CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.obj: CMakeFiles/xerxes.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:/msys2/home/0xtrensetta/Projects/Xerxes/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.obj"
-	/clang64/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.obj -MF CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.obj.d -o CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.obj -c E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Core/Window/Window.cpp
+	E:/msys2/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.obj -MF CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.obj.d -o CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.obj -c E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Core/Window/Window.cpp
 
 CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.i"
-	/clang64/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Core/Window/Window.cpp > CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.i
+	E:/msys2/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Core/Window/Window.cpp > CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.i
 
 CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.s"
-	/clang64/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Core/Window/Window.cpp -o CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.s
+	E:/msys2/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Core/Window/Window.cpp -o CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.s
+
+CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.obj: CMakeFiles/xerxes.dir/flags.make
+CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.obj: CMakeFiles/xerxes.dir/includes_CXX.rsp
+CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.obj: E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Runtime/Vulkan/VulkanCore.cpp
+CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.obj: CMakeFiles/xerxes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:/msys2/home/0xtrensetta/Projects/Xerxes/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.obj"
+	E:/msys2/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.obj -MF CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.obj.d -o CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.obj -c E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Runtime/Vulkan/VulkanCore.cpp
+
+CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.i"
+	E:/msys2/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Runtime/Vulkan/VulkanCore.cpp > CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.i
+
+CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.s"
+	E:/msys2/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Runtime/Vulkan/VulkanCore.cpp -o CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.s
+
+CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.obj: CMakeFiles/xerxes.dir/flags.make
+CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.obj: CMakeFiles/xerxes.dir/includes_CXX.rsp
+CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.obj: E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp
+CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.obj: CMakeFiles/xerxes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:/msys2/home/0xtrensetta/Projects/Xerxes/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.obj"
+	E:/msys2/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.obj -MF CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.obj.d -o CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.obj -c E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp
+
+CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.i"
+	E:/msys2/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp > CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.i
+
+CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.s"
+	E:/msys2/mingw64/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp -o CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.s
 
 # Object files for target xerxes
 xerxes_OBJECTS = \
 "CMakeFiles/xerxes.dir/Source/main.cpp.obj" \
-"CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.obj"
+"CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.obj" \
+"CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.obj" \
+"CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.obj"
 
 # External object files for target xerxes
 xerxes_EXTERNAL_OBJECTS =
 
 xerxes.exe: CMakeFiles/xerxes.dir/Source/main.cpp.obj
 xerxes.exe: CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.obj
+xerxes.exe: CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.obj
+xerxes.exe: CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.obj
 xerxes.exe: CMakeFiles/xerxes.dir/build.make
 xerxes.exe: E:/msys2/mingw64/lib/libSDL3.dll.a
 xerxes.exe: CMakeFiles/xerxes.dir/linkLibs.rsp
 xerxes.exe: CMakeFiles/xerxes.dir/objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=E:/msys2/home/0xtrensetta/Projects/Xerxes/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable xerxes.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=E:/msys2/home/0xtrensetta/Projects/Xerxes/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable xerxes.exe"
 	E:/msys2/clang64/bin/cmake.exe -E rm -f CMakeFiles/xerxes.dir/objects.a
 	E:/msys2/mingw64/bin/ar.exe qc CMakeFiles/xerxes.dir/objects.a @CMakeFiles/xerxes.dir/objects1.rsp
-	/clang64/bin/clang++ -Wl,--whole-archive CMakeFiles/xerxes.dir/objects.a -Wl,--no-whole-archive -o xerxes.exe -Wl,--out-implib,libxerxes.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/xerxes.dir/linkLibs.rsp
+	E:/msys2/mingw64/bin/c++.exe -Wl,--whole-archive CMakeFiles/xerxes.dir/objects.a -Wl,--no-whole-archive -o xerxes.exe -Wl,--out-implib,libxerxes.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/xerxes.dir/linkLibs.rsp
 
 # Rule to build all files generated by this target.
 CMakeFiles/xerxes.dir/build: xerxes.exe

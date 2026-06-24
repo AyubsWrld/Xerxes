@@ -1,1 +1,1 @@
--IE:/msys2/home/0xtrensetta/Projects/Xerxes/Include -IE:/msys2/home/0xtrensetta/Projects/Xerxes/SDL3::SDL3 -I/mingw64/include/GL
+-IE:/msys2/home/0xtrensetta/Projects/Xerxes/Include -IE:/msys2/home/0xtrensetta/Projects/Xerxes/SDL3::SDL3 -I/mingw64/inlcude/vulkan

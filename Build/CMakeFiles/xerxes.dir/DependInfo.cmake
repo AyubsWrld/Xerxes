@@ -9,6 +9,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Core/Window/Window.cpp" "CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.obj" "gcc" "CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.obj.d"
+  "E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Runtime/Vulkan/VulkanCore.cpp" "CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.obj" "gcc" "CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.obj.d"
+  "E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp" "CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.obj" "gcc" "CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.obj.d"
   "E:/msys2/home/0xtrensetta/Projects/Xerxes/Source/main.cpp" "CMakeFiles/xerxes.dir/Source/main.cpp.obj" "gcc" "CMakeFiles/xerxes.dir/Source/main.cpp.obj.d"
   )
 

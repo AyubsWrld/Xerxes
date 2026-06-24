@@ -153,6 +153,54 @@ Source/Core/Window/Window.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/xerxes.dir/build.make CMakeFiles/xerxes.dir/Source/Core/Window/Window.cpp.s
 .PHONY : Source/Core/Window/Window.cpp.s
 
+Source/Runtime/Vulkan/VulkanCore.obj: Source/Runtime/Vulkan/VulkanCore.cpp.obj
+.PHONY : Source/Runtime/Vulkan/VulkanCore.obj
+
+# target to build an object file
+Source/Runtime/Vulkan/VulkanCore.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xerxes.dir/build.make CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.obj
+.PHONY : Source/Runtime/Vulkan/VulkanCore.cpp.obj
+
+Source/Runtime/Vulkan/VulkanCore.i: Source/Runtime/Vulkan/VulkanCore.cpp.i
+.PHONY : Source/Runtime/Vulkan/VulkanCore.i
+
+# target to preprocess a source file
+Source/Runtime/Vulkan/VulkanCore.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xerxes.dir/build.make CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.i
+.PHONY : Source/Runtime/Vulkan/VulkanCore.cpp.i
+
+Source/Runtime/Vulkan/VulkanCore.s: Source/Runtime/Vulkan/VulkanCore.cpp.s
+.PHONY : Source/Runtime/Vulkan/VulkanCore.s
+
+# target to generate assembly for a file
+Source/Runtime/Vulkan/VulkanCore.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xerxes.dir/build.make CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanCore.cpp.s
+.PHONY : Source/Runtime/Vulkan/VulkanCore.cpp.s
+
+Source/Runtime/Vulkan/VulkanPhysicalDevice.obj: Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.obj
+.PHONY : Source/Runtime/Vulkan/VulkanPhysicalDevice.obj
+
+# target to build an object file
+Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xerxes.dir/build.make CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.obj
+.PHONY : Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.obj
+
+Source/Runtime/Vulkan/VulkanPhysicalDevice.i: Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.i
+.PHONY : Source/Runtime/Vulkan/VulkanPhysicalDevice.i
+
+# target to preprocess a source file
+Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xerxes.dir/build.make CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.i
+.PHONY : Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.i
+
+Source/Runtime/Vulkan/VulkanPhysicalDevice.s: Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.s
+.PHONY : Source/Runtime/Vulkan/VulkanPhysicalDevice.s
+
+# target to generate assembly for a file
+Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/xerxes.dir/build.make CMakeFiles/xerxes.dir/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.s
+.PHONY : Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp.s
+
 Source/main.obj: Source/main.cpp.obj
 .PHONY : Source/main.obj
 
@@ -189,6 +237,12 @@ help:
 	@echo "... Source/Core/Window/Window.obj"
 	@echo "... Source/Core/Window/Window.i"
 	@echo "... Source/Core/Window/Window.s"
+	@echo "... Source/Runtime/Vulkan/VulkanCore.obj"
+	@echo "... Source/Runtime/Vulkan/VulkanCore.i"
+	@echo "... Source/Runtime/Vulkan/VulkanCore.s"
+	@echo "... Source/Runtime/Vulkan/VulkanPhysicalDevice.obj"
+	@echo "... Source/Runtime/Vulkan/VulkanPhysicalDevice.i"
+	@echo "... Source/Runtime/Vulkan/VulkanPhysicalDevice.s"
 	@echo "... Source/main.obj"
 	@echo "... Source/main.i"
 	@echo "... Source/main.s"

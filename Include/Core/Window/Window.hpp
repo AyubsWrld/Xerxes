@@ -19,7 +19,9 @@ namespace Core::Window
     class Window 
     {
 
+        [[maybe_unused]]
         std::uint32_t   width;
+        [[maybe_unused]]
         std::uint32_t   height;
         std::string     name;
 

@@ -1,5 +1,6 @@
 #pragma once
-#include <print>
+#include <cstdio>
+#include <type_traits>
 
 #ifndef VULKAN_SUPPORTS_GEOMETRY_SHADERS
 #define VULKAN_SUPPORTS_GEOMETRY_SHADERS PLATFORM_SUPPORTS_GEOMETRY_SHADERS
@@ -16,17 +17,17 @@
     do                                                                        \
         {                                                                     \
             if(X != VK_SUCCESS)                                               \
-                std::print("{:s}: Result of routine failed: {:s}",            \
-                           __FUNCTION__, MSG);                                \
+                printf("%s: Result of routine failed: %s", __FUNCTION__,      \
+                       MSG);                                                  \
         }                                                                     \
     while(0)
 
 #if defined(_WIN32)
-#define SURFACE_NAME "VH_KHR_win32_surface"
+#define PLATFORM_SURFACE_NAME "VH_KHR_win32_surface"
 #elif defined(__APPLE__)
-#define SURFACE_NAME "VH_KHR_macos_surface"
+#define PLATFORM_SURFACE_NAME "VH_KHR_macos_surface"
 #elif defined(__linux__)
-#define SURFACE_NAME "VH_KHR_xcb_surface"
+#define PLATFORM_SURFACE_NAME "VH_KHR_xcb_surface"
 #endif
 
 namespace ShaderStage

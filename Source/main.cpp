@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <iostream>
 #include "Core/Utilities/ScopeExit.hpp"
+#include "Runtime/Vulkan/VulkanCore.hpp"
 
 #ifdef _WIN32
 #include <windows.h>
@@ -15,6 +16,7 @@ using GlHandle = std::uint32_t;
 
 // static constexpr char* vshader_source = "#version 330 core\n"
 
+[[maybe_unused]]
 const char* vertexShaderSource
     = "#version 330 core\n"
       "layout (location = 0) in vec3 aPos;\n"
@@ -23,6 +25,7 @@ const char* vertexShaderSource
       "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
       "}\0";
 
+[[maybe_unused]]
 static const char* fragmentShaderSource
     = "#version 330 core\n"
       "out vec4 FragColor;"
@@ -33,11 +36,12 @@ static const char* fragmentShaderSource
 
 
 
-int main(int argc, char* argv[])
+int main( int argc, const char* argv[])
 {
     SDL_Window* window = nullptr; 
     SDL_Event event; 
     bool running = true; 
+
 
     if(!SDL_Init(SDL_INIT_VIDEO))
     {
@@ -51,6 +55,8 @@ int main(int argc, char* argv[])
         std::cerr << "Failed to create SDL window\n";
         return EXIT_FAILURE;
     }
+
+    Runtime::Vulkan::VulkanCore vkCoreInstance; // Calls default ctor
 
     while(running)
     {

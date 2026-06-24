@@ -6,8 +6,8 @@ project(
     VERSION 0.1
 )
 
-set(CMAKE_CXX_COMPILER /clang64/bin/clang++)
-set(CMAKE_C_COMPILER /clang64/bin/clang)
+# set(CMAKE_CXX_COMPILER clang++)
+# set(CMAKE_C_COMPILER clang)
 
 set(CMAKE_CXX_STANDARD 23) 
 set(CMAKE_CXX_STANDARD_REQUIRED On)
@@ -25,22 +25,32 @@ target_sources(
     xerxes 
     PRIVATE 
     ${CMAKE_SOURCE_DIR}/Source/Core/Window/Window.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Runtime/Vulkan/VulkanCore.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Runtime/Vulkan/VulkanPhysicalDevice.cpp
 )
 target_link_libraries(
     xerxes 
     PRIVATE
     SDL3::SDL3
-    opengl32
     glew32
+    vulkan-1
 )
 
 target_include_directories(
     xerxes 
     PUBLIC
     SDL3::SDL3
-    /mingw64/include/GL/ # todo: fix this.
+    /mingw64/inlcude/vulkan
 )
 
+
+target_compile_options(
+    xerxes 
+    PRIVATE 
+    -Wall 
+    -Wextra 
+    #-Werror
+)
 # if(WIN32)
 #     add_custom_command(
 #         TARGET mygame POST_BUILD
