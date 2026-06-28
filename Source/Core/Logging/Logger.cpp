@@ -13,15 +13,11 @@ static const char* LogLevelPrefixes[] =
     "\033[90m[Trace]\033[0m",   
 };
 
-void PrintLogMessage([[maybe_unused]] LogLevel level, [[maybe_unused]] const char* format, ...)
-{
-    char buffer[256];
-    va_list argptr;
-    va_start(argptr, format);
-    sprintf(buffer,"%s: %s\n", LogLevelPrefixes[std::to_underlying(level)], format);
-    vprintf(buffer,argptr);
-    va_end(argptr);
-}
+// template <typename... Args>
+// void Log([[maybe_unused]] LogLevel level, [[maybe_unused]] const char* format, Args&&... args)
+// {
+//     std::vformat(format, std::make_wformat_args(args...));
+// }
 
 namespace Core::Logger
 {

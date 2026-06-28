@@ -1,13 +1,16 @@
 #pragma once
 
-#define LOG_WARN_ENABLED 1
-#define LOG_INFO_ENABLED 1
-#define LOG_DEBUG_ENABLED 1
-#define LOG_TRACE_ENABLED 1
+#include <format>
+#include <utility>
+
+#define XERXES_LOG_WARN_ENABLED 1
+#define XERXES_LOG_INFO_ENABLED 1
+#define XERXES_LOG_DEBUG_ENABLED 1
+#define XERXES_LOG_TRACE_ENABLED 1
 
 #ifdef XERXES_RELEASE
-#undef LOG_TRACE_ENABLED
-#undef LOG_DEBUG_ENABLED
+#undef XERXES_LOG_TRACE_ENABLED
+#undef XERXES_LOG_DEBUG_ENABLED
 #endif
 
 #ifdef XERXES_COMPILED_LIB
@@ -62,33 +65,33 @@ using format_string_t = std::format_string<Args...>;
 using format_string_t = std::string_view;
 #endif
 
+// template <typename... Args>
+// void Log([[maybe_unused]] LogLevel level, [[maybe_unused]] const char* format, Args&&... args);
+
 template <typename... Args>
-void PrintLogMessage(LogLevel level, const char* format, ...);
+inline std::string Log(LogLevel level, std::format_string<Args...> format, Args... args)
+{
+    return std::format(format, std::forward<Args...>(args...));
+}
+
+template <typename... Args>
+void Debug([[maybe_unused]] std::format_string<Args...> format, Args... args)
+{
+    std::cout << Log(LogLevel::Debug, format, std::forward<Args...>(args...));
+}
 
 #define XXFATAL(format, ...)                                                  \
-    PrintLogMessage(LogLevel::Fatal, format, __VA_ARGS__);
+    Log(LogLevel::Fatal, format, __VA_ARGS__);
 #define XXERROR(format, ...)                                                  \
-    PrintLogMessage(LogLevel::Error, format, __VA_ARGS__);
+    Log(LogLevel::Error, format, ##__VA_ARGS__);
 #define XXWARN(format, ...)                                                   \
-    PrintLogMessage(LogLevel::Warn, format, __VA_ARGS__);
+    Log(LogLevel::Warn, format, ##__VA_ARGS__);
 #define XXINFO(format, ...)                                                   \
-    PrintLogMessage(LogLevel::Info, format, __VA_ARGS__);
+    Log(LogLevel::Info, format, ##__VA_ARGS__);
 #define XXDEBUG(format, ...)                                                  \
-    PrintLogMessage(LogLevel::Debug, format, __VA_ARGS__);
+    Log(LogLevel::Debug, format, ##__VA_ARGS__);
 #define XXTRACE(format, ...)                                                  \
-    PrintLogMessage(LogLevel::Trace, format, __VA_ARGS__);
-
-#define XXASSERT(expr, format, ...)                                           \
-    do                                                                        \
-        {                                                                     \
-            if(expr)                                                          \
-                {                                                             \
-                }                                                             \
-            else                                                              \
-                {                                                             \
-                }                                                             \
-        }                                                                     \
-    while()
+    Log(LogLevel::Trace, format, ##__VA_ARGS__);
 
 namespace Core::Logger
 {
